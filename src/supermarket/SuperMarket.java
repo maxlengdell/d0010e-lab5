@@ -64,5 +64,8 @@ public class SuperMarket extends State {
 		isOpen=changeOpenorClose;
 		
 	}
+	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
+		Queue.add(id); //Lägger till kundens id i kön.
+	}
 
 }
