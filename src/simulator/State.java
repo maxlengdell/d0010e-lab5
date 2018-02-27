@@ -24,7 +24,8 @@ public class State extends Observable{
 	}
 	
 	public void notifyStateObs(){
-		
+		setChanged();
+		notifyObservers();
 	}
 
 }
