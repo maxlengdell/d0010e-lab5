@@ -6,7 +6,7 @@ import simulator.State;
 
 public class SuperMarket extends State {
 	private boolean isOpen=false;
-	private ArrayList <Customer> Queue;
+	public ArrayList <Customer> Queue;
 	private double skill;
 	private int missedCustomer=0;
 	private int debitedCustomer;
@@ -20,7 +20,7 @@ public class SuperMarket extends State {
 		super(0, true);
 		
 	}
-	public Queue getCustomerList(){
+	public ArrayList<Customer> getCustomerList(){
 		return Queue;
 	}
 	
