@@ -15,6 +15,7 @@ public class SuperMarket extends State {
 	private int currentCustomerAmount=0;
 	private double waitedTime=0;
 	private int customerIDCount=1;
+	private int timeOpen=8;
 	
 	public SuperMarket(){
 		super(0, true);
@@ -51,6 +52,10 @@ public class SuperMarket extends State {
 	
 	public int getcustomerIDCount(){
 		return customerIDCount;
+	}
+	
+	public int getTimeOpen(){
+		return timeOpen;
 	}
 	
 	
