@@ -1,10 +1,11 @@
 package simulator;
 import supermarket.Customer;
+import supermarket.SuperMarket;
 
 public class Event {
 	
 	
-	
+	private SuperMarket supermarket;
 	public void hello() {
 		
 		
@@ -18,12 +19,13 @@ public class Event {
 	}
 	public void custArrives() {
 		//Initierar
-	//Skapar id för kunden. 
+		//Skapar id för kunden. 
 		//customer creates new object  to customer. Waiting for method name.
 		//Takes two arguments. 
 		double time = 100;
-		for (int id = 0; id < supermarket.Customer; id++) {
+		for (int id = 0; id <= supermarket.getcurrentCustomerAmount(); id++) {
 			Customer customer = new Customer(id, time);
+			id++;
 		}
 		 // Tar det senare
 		 // Tar det senare	
