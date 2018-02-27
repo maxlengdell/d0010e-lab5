@@ -26,6 +26,7 @@ public class Customer {
     //return total time in store
     public double custExit(double time){
         exitStore = time-timeEnt;
+        return exitStore;
     }
     // customer enter queue this ends roam and returns it. Could change this and make it separate.
     public double enterQue(double time){
