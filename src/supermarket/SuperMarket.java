@@ -6,11 +6,11 @@ import simulator.State;
 
 public class SuperMarket extends State {
 	public boolean isOpen=false;
-	public ArrayList <Customer> Queue;
+	public ArrayList <Customer> customerQueue;
 	private double skill;
 	private int missedCustomer=0;
 	private int debitedCustomer;
-	private int[] cashRegister={0,0,0,0};
+	private int[] cashRegister={0,0,0,0}; //0 for vacant, 1 for occupied cashregister
 	private int maxCustomerAmount=5;
 	private int currentCustomerAmount=0;
 	private double waitedTime=0;
@@ -22,7 +22,7 @@ public class SuperMarket extends State {
 		
 	}
 	public ArrayList<Customer> getCustomerList(){
-		return Queue;
+		return customerQueue;
 	}
 	
 	public boolean getisOpen(){
@@ -65,7 +65,7 @@ public class SuperMarket extends State {
 		
 	}
 	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
-		Queue.add(id); //Lägger till kundens id i kön.
+		customerQueue.add(id); //Lägger till kundens id i kön.
 	}
 
 }
