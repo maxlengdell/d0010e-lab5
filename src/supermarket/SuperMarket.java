@@ -1,13 +1,14 @@
 package supermarket;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 import simulator.State;
 
 
 public class SuperMarket extends State {
 	public boolean isOpen=false;
-	public ArrayList <Customer> customerQueue;
+	public ArrayList <Customer> customerQueue=new ArrayList<Customer>();
 	private double skill;
 	private int missedCustomer=0;
 	private int debitedCustomer;
@@ -22,6 +23,43 @@ public class SuperMarket extends State {
 		super(0, true);
 		
 	}
+	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
+		customerQueue.add(id); //Lägger till kundens id i kön.
+	}
+	public void removeFirst() throws NoSuchElementException{
+		if(customerQueue.size()==0){
+			throw new NoSuchElementException();
+		}
+		else{
+			this.customerQueue.remove(0);
+		}
+		
+	}
+	
+	public Customer first() throws NoSuchElementException{
+		if(this.customerQueue.size()==0){
+			 throw new NoSuchElementException();
+		 }
+		 else{
+			 return this.customerQueue.get(0);
+		 }
+	 }
+	
+	 public boolean isEmpty(){
+		 if(this.customerQueue.size()==0){
+			 return true;
+		 }
+		 else{
+			 return false;
+		 }
+	 }
+	
+	public int size(){
+		return this.customerQueue.size();
+	}
+	
+	
+	
 	public ArrayList<Customer> getCustomerQueue(){
 		return customerQueue;
 	}
@@ -74,9 +112,7 @@ public class SuperMarket extends State {
 		isOpen=changeOpenorClose;
 		
 	}
-	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
-		customerQueue.add(id); //Lägger till kundens id i kön.
-	}
+	
 	
 
 }
