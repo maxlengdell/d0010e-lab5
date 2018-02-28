@@ -2,9 +2,20 @@ package supermarket;
 
 import simulator.View;
 
+import java.util.ArrayList;
+import java.util.stream.*;
+
 public class SuperMarketView extends View {
 	
 	SuperMarket superMarket;
+	
+	// Event descriptions
+	String open = new String("Open");
+	String close = new String("Close");
+	String arrival = new String("Customer arrival");
+	String paytime = new String("Customer wishes to pay");
+	String departure = new String("Customer departure");
+	String error = new String("Error");
 	
 	public SuperMarketView(SuperMarket superMarket) {
 		this.superMarket = superMarket;
@@ -27,43 +38,43 @@ public class SuperMarketView extends View {
 	}
 	
 	public void update() {
-		double time = superMarket.getTime();
-		int customerId = superMarket.getCurrentEvent().getCustomerId(); 
+		double time = superMarket.getTimeState()
+		int customerId = superMarket.getCurrentEvent().getCustomer().getId();  // TODO: placeholder method 
 		boolean isOpen = superMarket.getisOpen();
-		
-		
-		Free	= Number of free registers
-		FreeT	= total free register time
-		I		= Number of customers in the shop
-		$		= Number of customers that have paid
-		Missed	= Number of missed customers
-		QueuedTot= Total number of customer that has been in the queue
-		QueueT	= Total queue time for all customers
-		CurQueue= Number of customers in queue
-		IdQueue	= The queue of customer with id
-		
-		Event eventType;
-		switch  {
+		int free = IntStream.of(superMarket.getcashRegister()).sum();
+		double freeT = superMarket.getFreeCashRegTime();
+		int currentCustAmount = superMarket.getcurrentCustomerAmount();
+		int debited = superMarket.getdebitedCustomer();
+		int missed	= superMarket.getMissedCustomer();
+		int queuedTot = superMarket.getQueuedTot();			// TODO: placeholder method
+		double queueTime = superMarket.getwaitedTime();
+		int curQueue = superMarket.getCustomerQueue().size();		
+		ArrayList <Customer> queueList	= superMarket.getCustomerQueue();
+		String event;
+		int eventType = superMarket.getCurrentEvent().getEventType();
+		switch(eventType) {
 		case 0 :
-			//stuff
+			event = open;
 			break;
 		case 1 :
-			//stuff
+			event = close;
 			break;
 		case 2 :
-			//stuff
+			event = arrival;
 			break;
 		case 3 :
-			//stuff
+			event = paytime;
 			break;
 		case 4 :
-			//stuff
+			event = departure;
 			break;
+		default :
+			event = error;
 			
 		}
+		System.out.println(time+"\t"+event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t"+freeT+"\t"+currentCustAmount+"\t"+
+		debited+"\t"+missed+"\t"+queuedTot+"\t"+queueTime+"\t"+curQueue+"\t");
 		
-		
-		
-		System.out.println("Time\tEvent\tCustomer\tOpen?\tFree\tFreeT\tI\t$\tMissed\tQueueTot\tQueueT\tCurQueue\tIdQueue");
+		// TODO: Needs to print the current queue of customers, depends on implementation of FIFO
 	}
 }
