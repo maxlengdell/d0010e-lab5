@@ -1,5 +1,12 @@
 package supermarket;
 
+/**
+*
+* @author Shahin, Max, Johan, Linus
+*
+*/
+
+
 import simulator.View;
 
 import java.util.ArrayList;
