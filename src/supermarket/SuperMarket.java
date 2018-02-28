@@ -12,7 +12,7 @@ public class SuperMarket extends State {
 	private int missedCustomer=0;
 	private int debitedCustomer;
 	private int[] cashRegister={0,0,0,0}; //0 for vacant, 1 for occupied cashregister
-	private int maxCustomerAmount=5;
+	private int maxCustomerAmount=10;
 	private int currentCustomerAmount=0;
 	private double waitedTime=0;
 	private int customerIDCount=1;
@@ -77,5 +77,6 @@ public class SuperMarket extends State {
 	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
 		customerQueue.add(id); //Lägger till kundens id i kön.
 	}
+	
 
 }
