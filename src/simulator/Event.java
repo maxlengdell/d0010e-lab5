@@ -1,25 +1,29 @@
 package simulator;
-import supermarket.Customer;
-import supermarket.SuperMarket;
-import simulator.EventQueue;
 /**
  * 
  * GLÖM EJ NOTIFYOBSERVERS!
  *
  */
 
-public class Event {
+public abstract class Event {
 	
-	double time = 0;//*********** TID SKA SKAPAS*********** ENDAST FÖR ATT SLIPPA FEL
-	private SuperMarket supermarket;
-	private Customer customer;
-
-	public Event(Customer customer, double time) { //Perhaps more parameters?
-		//Sort the events by time.
-		this.time = time;
-		this.customer = customer;
+	private double time;
+	private State state;
+	
+	public Event(double time, State state) { //Perhaps more parameters?
+		
+		this.time = time; //Sort the events by time.
+		this.state = state;
 	}
 
-	
+	public double getTime() {
+		return time;
+	}
+	public State getState() {
+		return state;
+	}
+	public void Execute() {
+		
+	}
 
 }
