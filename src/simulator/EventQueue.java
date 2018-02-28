@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class EventQueue extends Event {
 	
-	public EventQueue(int id, double time) {
+	public EventQueue(int id, double time) {//Autogenererad?
 		super(id, time);
 		// TODO Auto-generated constructor stub
 	}
@@ -24,9 +24,18 @@ public class EventQueue extends Event {
 		eventList.remove(0);
 		return first;
 	}
-	public void addEvent() {
-		//Add event..? How to add according to time.
-		
+	public void parseEvents(int scheduledTime, Event event) {
+		for(int i = 0; i < eventList.size();i++) {
+			if(scheduledTime > eventList.get(i).time) {
+				eventList.add(i,event);
+				break;
+				
+			}else {
+				eventList.add(event);
+				break;
+			}
+		}
 	}
+	
 
 }
