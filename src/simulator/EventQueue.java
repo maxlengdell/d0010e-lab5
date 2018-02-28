@@ -1,13 +1,11 @@
 package simulator;
 
 import java.util.ArrayList;
+//import simulator.Event;
 
-public class EventQueue extends Event {
+public class EventQueue {
 	
-	public EventQueue(int id, double time) {//Autogenererad?
-		super(id, time);
-		// TODO Auto-generated constructor stub
-	}
+	private Event event;
 	public ArrayList <Event> eventList;
 	
 	public void addEvent(Event event){
@@ -24,10 +22,15 @@ public class EventQueue extends Event {
 		eventList.remove(0);
 		return first;
 	}
-	public void parseEvents(int scheduledTime, Event event) {
+	public void parseEvents(int scheduledTime, Event event) { 
+		//Adds event to eventList in order based on scheduled time. 
+		if (eventList.size() == 0) {
+			eventList.add(event);
+		}
 		for(int i = 0; i < eventList.size();i++) {
-			if(scheduledTime > eventList.get(i).time) {
+			if(scheduledTime > eventList.get(i).getTime()) { // Vilken klass ska hålla koll på tiden?
 				eventList.add(i,event);
+				
 				break;
 				
 			}else {
