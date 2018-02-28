@@ -8,14 +8,22 @@ import supermarket.SuperMarket;
  */
 
 public class Event {
+	
+	int Start = 1;
+	int customerArrival = 2;
+	int customerShopping = 3;
+	int customerPayment = 4;
+	int Close = 0;
+	
 
-	double time = 100;
+	double time = 100;//*********** TID SKA SKAPAS***********
 	private SuperMarket supermarket;
 	private Customer customer;
 	public void Event() {
 
 
-		
+	
+	public int get
 		//Variabel för customer till customer. 
 	}
 	public void open() {
@@ -32,9 +40,14 @@ public class Event {
 		//Skapar id för kunden. (check)
 		//customer creates new object  to customer. (check)
 		//Puts the customer in the "shopping" list
-		int id = 0;
-		Customer customer = new Customer(id, time);
-		id++;
+		if (supermarket.getisOpen()) {
+			int id = 0;
+			Customer customer = new Customer(id, time);
+			id++;
+		} else if (!(supermarket.getisOpen())) {
+			//Missad kund! add counter??
+		}
+		
 		
 
 	}//Customer finished shopping. 
@@ -43,24 +56,20 @@ public class Event {
 		//Puts the customer in the supermarket queue.
 		if(supermarket.cashRegStatus()) {//if cashregister is free. Execute this. 
 			
-			supermarket.addQueue(id);//Need to add customer to the queue. 
+			//Place customer in the cashregister. 
 		
 		}else if (!(supermarket.cashRegStatus())
-				) {//If the register is allocated. Place customer in queue. 
+				) {//If the register is allocated and returns false. Place customer in queue. 
 			customer.enterQue(time);
+			supermarket.addQueue(id);
 			
 		}
 		
 	}
-//	public boolean cashRegStatus() {
-//		
-//		for (int i = 0; i < supermarket.cashRegister.length(); i++) {
-//			if (supermarket.cashRegister.get(i) == 0) {
-//				return true;
-//			}
-//			return false;
-//		}
-//	}
+
+	public int getEventType() {
+		
+	}
 	public void custExit() { // CUSTOMER LEAVES STORE
 		//Get a timestamp of when the customer leaves the store
 		customer.custExit(time);
