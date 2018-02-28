@@ -6,19 +6,14 @@ public class EventOpen extends Event {
 	
 	
 	public EventOpen(SuperMarket s){
-		super(0,0);
+		super(0,s);
 		this.s=s;
-		
-		
 	}
-
-
 	public void Execute() {
-		
-		
-		
-
-
-
+		s.changeOpenState(true);
+		s.getcashRegister();
+		s.getCurrentEvent();
+		s.isEmpty();
+		s.notifyObservers();
 	}
 }

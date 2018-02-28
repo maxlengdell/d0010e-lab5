@@ -7,7 +7,8 @@ import simulator.State;
 
 
 public class SuperMarket extends State {
-	public boolean isOpen=false;
+	private boolean isOpen=false;
+	
 	public ArrayList <Customer> customerQueue=new ArrayList<Customer>();
 	private double skill;
 	private int missedCustomer=0;
@@ -67,6 +68,8 @@ public class SuperMarket extends State {
 	public boolean getisOpen(){
 		return isOpen;
 	}
+	
+	
 	public double getSkill(){
 		return skill;
 	}
@@ -108,7 +111,7 @@ public class SuperMarket extends State {
 	}
 	
 	
-	public void changeState(boolean changeOpenorClose){
+	public void changeOpenState(boolean changeOpenorClose){
 		isOpen=changeOpenorClose;
 		
 	}
