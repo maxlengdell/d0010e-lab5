@@ -11,21 +11,20 @@ import simulator.EventQueue;
 public class Event {
 	
 	int Start = 1;
-	int customerArrival = 2;
-	int customerShopping = 3;
-	int customerPayment = 4;
-	int Close = 0;
+//	int customerArrival = 2;
+//	int customerShopping = 3;
+//	int customerPayment = 4;
+//	int Close = 0;
 	int eventType;
 	
 
-	double time = 100;//*********** TID SKA SKAPAS***********
+	double time = 100;//*********** TID SKA SKAPAS*********** ENDAST FÖR ATT SLIPPA FEL
 	private SuperMarket supermarket;
 	private Customer customer;
-	public void Event() {
 
-	public Event(id, time, ) {
+	public Event(int id, double time) { //Perhaps more parameters?
 		//Sort the events by time.
-		//test
+		
 	}
 	
 	public int getEventType() {
@@ -33,7 +32,7 @@ public class Event {
 		
 	}
 		//Variabel för customer till customer. 
-	}
+	
 	public void open() {
 		//Open shop and lets customers in. 
 		supermarket.changeState(true);
@@ -75,9 +74,6 @@ public class Event {
 		
 	}
 
-	public int getEventType() {
-		
-	}
 	public void custExit() { // CUSTOMER LEAVES STORE
 		//Get a timestamp of when the customer leaves the store
 		customer.custExit(time);

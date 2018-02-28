@@ -3,6 +3,11 @@ package simulator;
 import java.util.ArrayList;
 
 public class EventQueue extends Event {
+	
+	public EventQueue(int id, double time) {
+		super(id, time);
+		// TODO Auto-generated constructor stub
+	}
 	public ArrayList <Event> eventList;
 	
 	public void addEvent(Event event){
