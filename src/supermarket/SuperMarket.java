@@ -61,6 +61,7 @@ public class SuperMarket extends State {
 	public boolean cashRegStatus(){
 		for(int i=0; i<cashRegister.length;i++){
 			if(this.cashRegister[i]==0){
+				this.cashRegister[i]=1;
 				return true;
 			}
 		}
