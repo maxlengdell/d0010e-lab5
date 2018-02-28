@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import simulator.State;
 
+
 public class SuperMarket extends State {
 	public boolean isOpen=false;
 	public ArrayList <Customer> customerQueue;
