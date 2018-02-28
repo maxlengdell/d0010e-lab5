@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import simulator.State;
 
 public class SuperMarket extends State {
-	private boolean isOpen=false;
+	public boolean isOpen=false;
 	public ArrayList <Customer> Queue;
 	private double skill;
 	private int missedCustomer=0;
@@ -15,7 +15,7 @@ public class SuperMarket extends State {
 	private int currentCustomerAmount=0;
 	private double waitedTime=0;
 	private int customerIDCount=1;
-	private int timeOpen=8;
+	private double timeOpen=8.0;
 	
 	public SuperMarket(){
 		super(0, true);
@@ -54,14 +54,18 @@ public class SuperMarket extends State {
 		return customerIDCount;
 	}
 	
-	public int getTimeOpen(){
+	public double getTimeOpen(){
 		return timeOpen;
 	}
 	
 	
 	
-	public void changeState(){
+	public void changeState(boolean changeOpenorClose){
+		isOpen=changeOpenorClose;
 		
+	}
+	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
+		Queue.add(id); //Lägger till kundens id i kön.
 	}
 
 }
