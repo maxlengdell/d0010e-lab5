@@ -25,6 +25,7 @@ public class Event {
 
 	public Event(id, time, ) {
 		//Sort the events by time.
+		//test
 	}
 	
 	public int getEventType() {
