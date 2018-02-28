@@ -10,14 +10,14 @@ public class RunSim {
 
     stäng och stop läggas in med bestämda tider?
 */
-
-    boolean run = true;
+    //When we get the stop signal we set run to false!
+    State S;
     EventQueue EQ;
     public void run(){
         this.EQ = new EventQueue();
-        while(run){
-            //get by time??????
-           // EQ.eventList.get(0);
+        while(S.getisActive()){
+            //get next event in queue and execute
+            EQ.eventList.get(0).Execute();
         }
     }
     public static void main(String[] args) {
