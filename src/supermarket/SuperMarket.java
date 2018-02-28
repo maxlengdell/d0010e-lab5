@@ -21,7 +21,7 @@ public class SuperMarket extends State {
 		super(0, true);
 		
 	}
-	public ArrayList<Customer> getCustomerList(){
+	public ArrayList<Customer> getCustomerQueue(){
 		return customerQueue;
 	}
 	
