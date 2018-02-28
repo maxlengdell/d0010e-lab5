@@ -1,6 +1,7 @@
 package simulator;
 import supermarket.Customer;
 import supermarket.SuperMarket;
+import simulator.EventQueue;
 /**
  * 
  * GLÖM EJ NOTIFYOBSERVERS!
@@ -23,7 +24,7 @@ public class Event {
 	public void Event() {
 
 	public Event(id, time, ) {
-		
+		//Sort the events by time.
 	}
 	
 	public int getEventType() {
