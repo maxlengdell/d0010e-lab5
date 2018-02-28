@@ -45,5 +45,9 @@ public class Customer {
         return exitStore - exitQue;
     }
 
+    public int getID(){
+        return id;
+    }
+
 
 }
