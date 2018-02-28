@@ -15,6 +15,8 @@ public class Event {
 	public void Event() {
 
 
+		
+		//Variabel för customer till customer. 
 	}
 	public void open() {
 		//Open shop and lets customers in. 
@@ -36,12 +38,29 @@ public class Event {
 		
 
 	}//Customer finished shopping. 
-	public void custEnterQueue() {
+	public void custTriesToPurchase() {
 		//Time for how long the customer shopped*I think*(check)
 		//Puts the customer in the supermarket queue.
-		customer.enterQue(time);
-		supermarket.addQueue(id);//Need to add customer to the queue. 
+		if(supermarket.cashRegStatus()) {//if cashregister is free. Execute this. 
+			
+			supermarket.addQueue(id);//Need to add customer to the queue. 
+		
+		}else if (!(supermarket.cashRegStatus())
+				) {//If the register is allocated. Place customer in queue. 
+			customer.enterQue(time);
+			
+		}
+		
 	}
+//	public boolean cashRegStatus() {
+//		
+//		for (int i = 0; i < supermarket.cashRegister.length(); i++) {
+//			if (supermarket.cashRegister.get(i) == 0) {
+//				return true;
+//			}
+//			return false;
+//		}
+//	}
 	public void custExit() { // CUSTOMER LEAVES STORE
 		//Get a timestamp of when the customer leaves the store
 		customer.custExit(time);
