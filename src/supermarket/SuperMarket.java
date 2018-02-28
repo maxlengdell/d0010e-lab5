@@ -23,7 +23,7 @@ public class SuperMarket extends State {
 		super(0, true);
 		
 	}
-	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den kol själv. 
+	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den koll själv. 
 		customerQueue.add(id); //Lägger till kundens id i kön.
 	}
 	public void removeFirst() throws NoSuchElementException{
