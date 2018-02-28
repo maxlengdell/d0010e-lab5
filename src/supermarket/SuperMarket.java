@@ -58,6 +58,14 @@ public class SuperMarket extends State {
 		return timeOpen;
 	}
 	
+	public boolean cashRegStatus(){
+		for(int i=0; i<cashRegister.length;i++){
+			if(this.cashRegister[i]==0){
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	
 	public void changeState(boolean changeOpenorClose){

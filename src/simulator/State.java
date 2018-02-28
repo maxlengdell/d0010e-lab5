@@ -4,6 +4,7 @@ import java.util.Observable;
 
 public class State extends Observable{
 	private double time;
+	private double freeCashRegTime;
 	private boolean isActive;
 	private Event currentEvent; 
 	public State(double time, boolean isActive){
@@ -12,6 +13,10 @@ public class State extends Observable{
 	}
 	public double getTimeState(){
 		return this.time;
+	}
+	public double getFreeCashRegTime(){
+		return this.freeCashRegTime;
+		
 	}
 	public boolean getisActive(){
 		return this.isActive;
