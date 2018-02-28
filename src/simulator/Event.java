@@ -14,6 +14,7 @@ public class Event {
 	int customerShopping = 3;
 	int customerPayment = 4;
 	int Close = 0;
+	int eventType;
 	
 
 	double time = 100;//*********** TID SKA SKAPAS***********
@@ -21,9 +22,14 @@ public class Event {
 	private Customer customer;
 	public void Event() {
 
-
+	public Event(id, time, ) {
+		
+	}
 	
-	public int get
+	public int getEventType() {
+		return eventType;
+		
+	}
 		//Variabel för customer till customer. 
 	}
 	public void open() {
