@@ -1,7 +1,7 @@
 package supermarket;
 import supermarket.SuperMarket;
 
-public class CustomerArriveTime {
+public class EventArrival {
 	private SuperMarket supermarket;
 //define time!!
 
