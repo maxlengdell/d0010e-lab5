@@ -8,7 +8,8 @@ public class EventQueue {
 	private Event event;
 	public ArrayList <Event> eventList;
 
-	public void addEvent(Event event){
+	public void addEvent(Event event){//Nödvändigt??
+		eventList.add(event);
 
 	}
 	public void executeNext(Event event){
