@@ -1,18 +1,22 @@
 package supermarket;
 
-public class EventClose {
+import simulator.Event;
 
-}
+public class EventClose extends Event {
+	SuperMarket s;
+	
+	public EventClose(double time, SuperMarket s){
+		super(time, s);
+		this.s=s;
+	}
 
 
-/*
-
-
-public void close() {
-	//Reject customers from entering the shop. Let customers already in the shop finish their shopping. 
-	supermarket.changeState(false);
+	public void Execute() {
+		s.changeOpenState(false);
+		s.notifyObservers();
+	
+	}
 }
 
 	
 
-*/
