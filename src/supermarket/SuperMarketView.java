@@ -39,18 +39,17 @@ public class SuperMarketView extends View {
 	
 	public void update() {
 		double time = superMarket.getTimeState()
-		int customerId = superMarket.getCurrentEvent().getCustomer().getId(); 
+		int customerId = superMarket.getCurrentEvent().getCustomer().getId();  // TODO: placeholder method 
 		boolean isOpen = superMarket.getisOpen();
 		int free = IntStream.of(superMarket.getcashRegister()).sum();
 		double freeT = superMarket.getFreeCashRegTime();
 		int currentCustAmount = superMarket.getcurrentCustomerAmount();
 		int debited = superMarket.getdebitedCustomer();
 		int missed	= superMarket.getMissedCustomer();
-		int queuedTot = superMarket.getQueuedTot();
+		int queuedTot = superMarket.getQueuedTot();			// TODO: placeholder method
 		double queueTime = superMarket.getwaitedTime();
-		int curQueue = superMarket.getCustomerList().size();
-		ArrayList <Customer> queueList	= superMarket.getCustomerList();
-		
+		int curQueue = superMarket.getCustomerQueue().size();		
+		ArrayList <Customer> queueList	= superMarket.getCustomerQueue();
 		String event;
 		int eventType = superMarket.getCurrentEvent().getEventType();
 		switch(eventType) {
@@ -75,5 +74,7 @@ public class SuperMarketView extends View {
 		}
 		System.out.println(time+"\t"+event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t"+freeT+"\t"+currentCustAmount+"\t"+
 		debited+"\t"+missed+"\t"+queuedTot+"\t"+queueTime+"\t"+curQueue+"\t");
+		
+		// TODO: Needs to print the current queue of customers, depends on implementation of FIFO
 	}
 }
