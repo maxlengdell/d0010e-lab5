@@ -4,15 +4,15 @@ import java.util.ArrayList;
 //import simulator.Event;
 
 public class EventQueue {
-	
+
 	private Event event;
 	public ArrayList <Event> eventList;
-	
+
 	public void addEvent(Event event){
-		
+
 	}
 	public void executeNext(Event event){
-		
+
 	}
 	public ArrayList<Event> getEventList () {
 		return eventList;
@@ -26,19 +26,21 @@ public class EventQueue {
 		//Adds event to eventList in order based on scheduled time. 
 		if (eventList.size() == 0) {
 			eventList.add(event);
-		}
-		for(int i = 0; i < eventList.size();i++) {
-			if(scheduledTime > eventList.get(i).getTime()) { // Vilken klass ska hålla koll på tiden?
-				eventList.add(i,event);
-				
-				break;
-				
-			}else {
-				eventList.add(event);
-				break;
+		}else {
+			for(int i = 0; i < eventList.size();i++) {
+				if(scheduledTime > eventList.get(i).getTime()) { // Vilken klass ska hålla koll på tiden?
+					//Tveksamt om detta fungerar. hur får man det enskilda eventets tid?
+					eventList.add(i,event);
+
+					break;
+
+				}else {
+					eventList.add(event);
+					break;
+				}
 			}
 		}
 	}
-	
+
 
 }
