@@ -8,6 +8,7 @@ package simulator;
 public abstract class Event {
 	
 	private double time;
+	private State state;
 	
 	public Event(double time, State state) { //Perhaps more parameters?
 		
