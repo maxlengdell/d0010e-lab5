@@ -10,6 +10,7 @@ public class SuperMarket extends State {
 	
 	private boolean isOpen=false;
 	
+	double time;
 	
 	// SuperMarket variables
 	private double skill;
@@ -33,7 +34,7 @@ public class SuperMarket extends State {
 	 */
 	public SuperMarket(double time, boolean isActive, EventQueue eventQueue){
 		super(time, isActive, eventQueue);
-		
+		this.time = time;
 	}
 		
 	/*
@@ -58,6 +59,16 @@ public class SuperMarket extends State {
 			}
 		}
 		return;
+	}
+	private int customerAmountInQueue() {
+		int queueCount = 0;
+		for (int i = 0; i < customerQueue.length; i++) {
+			if (customerQueue[i] == null) {
+				break;
+			}
+			queueCount++;
+		}
+		return queueCount;
 	}
 	
 	/*
@@ -116,8 +127,17 @@ public class SuperMarket extends State {
 		return;	
 	}
 	
-	
-	
+	/* 
+	 * Update time statistics
+	 */
+	public void updateTimeStatistics(double newTime) {
+		waitedTime = waitedTime + (newTime-time)*customerAmountInQueue();
+		int numOfFreeCashRegs = 0;
+		for (int i = 0; i < cashRegister.length; i++) {
+			numOfFreeCashRegs += 1 - cashRegister[i];
+		}
+		freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
+		}
 	
 	public double getSkill(){
 		return skill;
