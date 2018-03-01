@@ -3,7 +3,9 @@ package random;
 
 import java.util.Random;
 
-public class ExponentialRandomStream {
+import supermarket.SuperMarketRandomGen;
+
+public class ExponentialRandomStream extends SuperMarketRandomGen {
 	
 	private Random rand;
 	private double lambda;
@@ -21,4 +23,5 @@ public class ExponentialRandomStream {
 	public double next() {
 	  	return -Math.log(rand.nextDouble())/lambda;
 	}
+	
 }

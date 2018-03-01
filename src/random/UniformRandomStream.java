@@ -3,8 +3,10 @@ package random;
 
 import java.util.Random;
 
+import supermarket.SuperMarketRandomGen;
 
-public class UniformRandomStream {
+
+public class UniformRandomStream extends SuperMarketRandomGen {
 
 	private Random rand;
 	private double lower, width;
