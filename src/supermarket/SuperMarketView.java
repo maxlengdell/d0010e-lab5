@@ -8,22 +8,18 @@ package supermarket;
 
 
 import simulator.*;
-import supermarket.*;
-
-import java.util.ArrayList;
-import java.util.stream.*;
 
 public class SuperMarketView extends View {
 	
 	SuperMarket s;
 	
 	// Event descriptions
-	String open = new String("Open");
-	String close = new String("Close");
-	String arrival = new String("Customer arrival");
+	String open = new String("Open                  ");
+	String close = new String("Close                 ");
+	String arrival = new String("Customer arrival      ");
 	String paytime = new String("Customer wishes to pay");
-	String departure = new String("Customer departure");
-	String error = new String("Error");
+	String departure = new String("Customer departure    ");
+	String error = new String("Unknown               ");
 	
 	public SuperMarketView(SuperMarket superMarket) {
 		this.s = superMarket;
@@ -59,8 +55,7 @@ public class SuperMarketView extends View {
 		int curQueue = s.customerAmountInQueue();
 
 		String event;
-		
-		Class eventType = s.getCurrentEventType()
+		Class<?> eventType = s.getCurrentEventType();
 				
 		if (eventType == EventOpen.class) {
 			event = open;
@@ -74,18 +69,12 @@ public class SuperMarketView extends View {
 		else if (eventType == EventDebiting.class) {
 			event = paytime;
 		}
-		else if (eventType == ) {
-			event = 
-		}
-		case  :
-			event = ;
-			break;
-		case EventDeparture.class :
+		else if (eventType == EventDeparture.class) {
 			event = departure;
-			break;
-		default :
+		}
+		else {
 			event = error;
-			
+		}
 		
 		System.out.print(time+"\t"+event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t"+freeT+"\t"+currentCustAmount+"\t"+
 		debited+"\t"+missed+"\t"+queuedTot+"\t"+queueTime+"\t"+curQueue+"\t[");
@@ -93,13 +82,14 @@ public class SuperMarketView extends View {
 		Customer[] customerQueue = s.getCustomerQueue();
 				
 		
-		for (int i = 0; i < queueId.length; i++) {
-			System.out.print(queueId[i]);
-			if (i< queueId.length-1) {
-				System.out.print(", ");
-			}
-			else {
+		for (int i = 0; i < customerQueue.length; i++) {
+			if (customerQueue[i] == null) {
 				System.out.println("]");
+				break;
+			}
+			System.out.print(customerQueue[i].getID());
+			if (customerQueue[i+1] != null) {
+				System.out.print(", ");
 			}
 		}
 		

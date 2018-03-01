@@ -1,8 +1,5 @@
 package supermarket;
 
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
-
 import simulator.*;
 
 

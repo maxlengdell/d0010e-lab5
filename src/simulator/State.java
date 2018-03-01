@@ -2,12 +2,13 @@ package simulator;
 
 import java.util.Observable;
 
+@SuppressWarnings("deprecation")
 public class State extends Observable{
 	private double time;
 	
 	private boolean isActive;
 	private Event currentEvent; 
-	private Class currentEventType;
+	private Class<?> currentEventType;
 	private EventQueue eventQueue;
 	
 	public State(double time, boolean isActive, EventQueue eventQueue){
@@ -56,10 +57,10 @@ public class State extends Observable{
 	public void changeEvent(Event newEvent){
 		this.currentEvent=newEvent;
 	}
-	public Class getCurrentEventType(){
+	public Class<?> getCurrentEventType(){
 		return currentEventType;
 	}
-	public void setEventType(Class eventType){
+	public void setEventType(Class<?> eventType){
 		currentEventType = eventType;
 	}
 	
