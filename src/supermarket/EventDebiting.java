@@ -1,23 +1,27 @@
 package supermarket;
 
-public class EventDebiting {
+import simulator.Event;
+import simulator.State;
 
-}
-
-/*
- * public void custTriesToPurchase() {
+public class EventDebiting extends Event {
+	SuperMarket s;
+	public EventDebiting(double time, SuperMarket s){
+		super(time,s);
+		this.s=s;
+		
+	}
+ public void Execute() {
 		//Time for how long the customer shopped*I think*(check)
 		//Puts the customer in the supermarket queue.
-		if(supermarket.cashRegStatus()) {//if cashregister is free. Execute this. 
+	 
+		if(s.cashRegStatus()==0) {//if cashregister is free. Execute this. 
 			
 			//Place customer in the cashregister. 
 		
-		}else if (!(supermarket.cashRegStatus())
-				) {//If the register is allocated and returns false. Place customer in queue. 
-			customer.enterQue(time);
-			supermarket.addQueue(id);
+		}
+		else if(s.cashRegStatus()==1){ //if cashregister is occupied. Execute this.
 			
 		}
 		
-	}
-	*/
+  }
+}
