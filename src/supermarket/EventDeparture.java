@@ -15,8 +15,8 @@ public class EventDeparture extends Event {
 	}
 	
 	public void execute() {
-		// update waited time
-		// update free cash register time
+		s.updateTimeStatistics(time);
+		
 		s.subCurrentCustomerAmount();
 		s.addDebitedCustomer();
 		Customer nextCustomer = s.takeFirstCustomerFromQueue();
@@ -30,6 +30,7 @@ public class EventDeparture extends Event {
 		
 		s.setTimeState(time);
 		s.setEventType(this.getClass());
+		s.setEventCustomer(customer);
 		s.notifyStateObs();
 	}
 

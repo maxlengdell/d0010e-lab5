@@ -23,13 +23,13 @@ public class EventArrival extends Event {
 	 */
 	public void execute() {
 		Customer customer = new Customer(s.nextCustomerId(), s.getTimeState());
-		// update waited time
-		// update free cash register time
+		s.updateTimeStatistics(time);
+		
 		if (s.getisOpen()) {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {
 				s.addCurrentCustomerAmount();
 				
-				double debitingTime = time + s.getRandomArrivalTime();
+				double debitingTime = time + s.getRandomPickingTime();
 				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer));
 			}
 			else {
@@ -43,6 +43,8 @@ public class EventArrival extends Event {
 		}
 		s.setTimeState(time);
 		s.setEventType(this.getClass());
+		s.setEventCustomer(customer);
+		
 		s.notifyStateObs();
 		
 	}

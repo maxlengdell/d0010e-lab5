@@ -13,7 +13,7 @@ public class SuperMarket extends State {
 	double time;
 	
 	// SuperMarket variables
-	private double skill;
+	private double skill = 1;
 	private int maxCustomerAmount=10;
 	private int numberOfCashRegisters;
 	private double timeOpen=8.0;
@@ -30,6 +30,9 @@ public class SuperMarket extends State {
 	private int currentCustomerAmount = 0;
 	private int customerIDCount = 0;
 	
+	// Event tracking
+	private Customer currentEventCustomer;
+	
 	/*
 	 * Constructor
 	 */
@@ -37,7 +40,16 @@ public class SuperMarket extends State {
 		super(time, isActive, eventQueue);
 		this.time = time;
 	}
-		
+	
+	/*
+	 * Changes the supermarket variables
+	 */
+	public void changeVariables(int newNumberOfCashRegs, double newSkillLevel) {
+		cashRegister = new int[newNumberOfCashRegs];
+		skill = newSkillLevel;
+	}
+	
+	
 	/*
 	 * CustomerQueue stuff
 	 */
@@ -168,6 +180,16 @@ public class SuperMarket extends State {
 			}
 		}
 		return;
+	}
+	
+	/*
+	 * Event tracking stuff
+	 */
+	public void setEventCustomer(Customer newEventCustomer) {
+		currentEventCustomer = newEventCustomer;
+	}
+	public int getEventCustomerId() {
+		return currentEventCustomer.getID();
 	}
 	
 	

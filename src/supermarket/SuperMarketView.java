@@ -47,7 +47,8 @@ public class SuperMarketView extends View {
 	
 	public void update() {
 		double time = s.getTimeState();
-		int customerId = s.getCurrentEvent().getCustomer().getId();  // TODO: placeholder method 
+		int customerId = s.getEventCustomerId();
+		if (customerId == null)
 		boolean isOpen = s.getisOpen();
 		int free = IntStream.of(s.getcashRegister()).sum();
 		double freeT = s.getFreeCashRegTime();
@@ -83,7 +84,8 @@ public class SuperMarketView extends View {
 		System.out.print(time+"\t"+event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t"+freeT+"\t"+currentCustAmount+"\t"+
 		debited+"\t"+missed+"\t"+queuedTot+"\t"+queueTime+"\t"+curQueue+"\t[");
 		
-		int[] queueId = s.getQueueIdArray();
+		Customer[] customerQueue = s.getCustomerQueue();
+				
 		
 		for (int i = 0; i < queueId.length; i++) {
 			System.out.print(queueId[i]);
