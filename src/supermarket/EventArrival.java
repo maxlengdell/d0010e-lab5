@@ -1,7 +1,5 @@
 package supermarket;
 
-import com.sun.jdi.event.EventQueue;
-
 import simulator.*;
 
 public class EventArrival extends Event {
