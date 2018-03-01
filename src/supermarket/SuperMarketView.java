@@ -46,7 +46,7 @@ public class SuperMarketView extends View {
 	}
 	
 	public void update() {
-		double time = s.getTimeState()
+		double time = s.getTimeState();
 		int customerId = s.getCurrentEvent().getCustomer().getId();  // TODO: placeholder method 
 		boolean isOpen = s.getisOpen();
 		int free = IntStream.of(s.getcashRegister()).sum();
