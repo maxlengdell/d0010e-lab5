@@ -137,7 +137,11 @@ public class SuperMarket extends State {
 			numOfFreeCashRegs += 1 - cashRegister[i];
 		}
 		freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
-		}
+	}
+	
+	
+	
+	
 	
 	public double getSkill(){
 		return skill;

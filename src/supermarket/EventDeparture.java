@@ -28,8 +28,8 @@ public class EventDeparture extends Event {
 			s.freeCashRegister();
 		}		
 		
-		s.setTime(time);
-		s.setCurrentEventType(this);
+		s.setTimeState(time);
+		s.setEventType(this.getClass());
 		s.notifyStateObs();
 	}
 
