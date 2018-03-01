@@ -13,7 +13,6 @@ public class EventOpen extends Event {
 		s.changeOpenState(true);
 		s.getcashRegister();
 		s.getCurrentEvent();
-		s.isEmpty();
 		s.notifyObservers();
 	}
 }
