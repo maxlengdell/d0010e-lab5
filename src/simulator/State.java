@@ -43,6 +43,9 @@ public class State extends Observable{
 	public boolean getisActive(){
 		return this.isActive;
 	}
+	public boolean changeisActive(boolean isActive){
+		return this.isActive;
+	}
 	
 	/*
 	 * CurrentEvent stuff
