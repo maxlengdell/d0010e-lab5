@@ -1,27 +1,32 @@
 package simulator;
 
-import supermarket.SuperMarket;
 import random.ExponentialRandomStream;
+import supermarket.EventArrival;
+import supermarket.SuperMarket;
+import simulator.State;
+
 
 public class Optimize {
 	private static SuperMarket supermarket;
-
-	State S;
-	EventQueue EQ;
 	
-	public static void cashOpen() {
+	
+	public static void cashOpen(EventQueue EQ, SuperMarket S) {
 		for (int i = 0; i < supermarket.getmaxCustomerAmount(); i++) {
 			
-			
-			setNumberOfCashRegisters(i);
+			supermarket.changeVariables(i);
 			while(S.getisActive()) {
 				EQ.eventList.get(0).Execute();
 			}
-			
+			//Måste jämföra minsta antalet missade kunder och publicera vilket som är mest lämpligt.
 		}
 	}
 	public static void main(String[] args) {
-		ExponentialRandomStream exp = new ExponentialRandomStream(1,1234);
-		System.out.println("rand valie from optimize: "+ exp.next());
+		//Kopierat från RunSim
+			EventQueue EQ = new EventQueue();
+	        SuperMarket SM = new SuperMarket(0,true,EQ);
+	        EventArrival EA = new EventArrival(0,SM);
+	        EA.execute();
+	        //now run eventQueue
+	        cashOpen(EQ,SM);
 	}
 }
