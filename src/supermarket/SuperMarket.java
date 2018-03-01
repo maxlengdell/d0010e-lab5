@@ -3,7 +3,7 @@ package supermarket;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-import simulator.State;
+import simulator.*;
 
 
 public class SuperMarket extends State {
@@ -23,16 +23,21 @@ public class SuperMarket extends State {
 	private double freeCashRegTime = 0;
 	
 	// Current State data
-	private int[] cashRegister = {0,0,0,0}; //0 for vacant, 1 for occupied cashregister
+	private int[] cashRegister = {0,0,0,0}; // 0 for vacant, 1 for occupied cashregister
+	// public ArrayList <Customer> customerQueue=new ArrayList<Customer>(); This an alternative to a customer array
+	private Customer[] customerQueue = new Customer[maxCustomerAmount];
 	private int currentCustomerAmount = 0;
 	private int customerIDCount = 0;
 	
-	public ArrayList <Customer> customerQueue=new ArrayList<Customer>();
-	
-	public SuperMarket(){
-		super(0, true);
+	/*
+	 * Constructor
+	 */
+	public SuperMarket(double time, boolean isActive, EventQueue eventQueue){
+		super(time, isActive, eventQueue);
 		
 	}
+	
+	
 	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den koll själv. 
 		customerQueue.add(id); //Lägger till kundens id i kön.
 	}
@@ -45,6 +50,8 @@ public class SuperMarket extends State {
 		}
 		
 	}
+	
+	public get
 	
 	public Customer first() throws NoSuchElementException{
 		if(this.customerQueue.size()==0){
