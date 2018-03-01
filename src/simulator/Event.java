@@ -9,7 +9,7 @@ public abstract class Event {
 	
 	private double time;
 	
-	public Event(double time) { //Perhaps more parameters?
+	public Event(double time, state) { //Perhaps more parameters?
 		
 		this.time = time; //Sort the events by time.
 		this.state = state;

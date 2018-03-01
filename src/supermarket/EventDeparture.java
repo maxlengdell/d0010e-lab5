@@ -28,8 +28,8 @@ public class EventDeparture extends Event {
 		}		
 		
 		s.setTime(time);
-		s.setCurrentEvent(this);
-		s.notify();
+		s.setCurrentEventType(this);
+		s.notifyStateObs();
 	}
 
 }

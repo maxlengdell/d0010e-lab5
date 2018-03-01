@@ -24,8 +24,7 @@ public class SuperMarket extends State {
 	
 	// Current State data
 	private int[] cashRegister = {0,0,0,0}; // 0 for vacant, 1 for occupied cashregister
-	// public ArrayList <Customer> customerQueue=new ArrayList<Customer>(); This an alternative to a customer array
-	private Customer[] customerQueue = new Customer[maxCustomerAmount];
+	private Customer[] customerQueue = new Customer[maxCustomerAmount]; // public ArrayList <Customer> customerQueue=new ArrayList<Customer>(); This an alternative to a customer array
 	private int currentCustomerAmount = 0;
 	private int customerIDCount = 0;
 	
@@ -36,6 +35,22 @@ public class SuperMarket extends State {
 		super(time, isActive, eventQueue);
 		
 	}
+	
+	
+	/*
+	 * CustomerQueue stuff
+	 */
+	public Customer[] getCustomerQueue() {
+		return customerQueue;
+	}
+	
+	/*
+	 * Customer id stuff
+	 */
+	public int nextCustomerId() {
+		customerIDCount++;
+	}
+	
 	
 	
 	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den koll själv. 
@@ -77,9 +92,7 @@ public class SuperMarket extends State {
 	
 	
 	
-	public ArrayList<Customer> getCustomerQueue(){
-		return customerQueue;
-	}
+	
 	
 	public boolean getisOpen(){
 		return isOpen;
@@ -140,3 +153,51 @@ public class SuperMarket extends State {
 	
 
 }
+
+
+
+
+/*
+ * 
+ * 
+	
+	
+	
+	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den koll själv. 
+		customerQueue.add(id); //Lägger till kundens id i kön.
+	}
+	public void removeFirst() throws NoSuchElementException{
+		if(customerQueue.size()==0){
+			throw new NoSuchElementException();
+		}
+		else{
+			this.customerQueue.remove(0);
+		}
+		
+	}
+	
+	public get
+	
+	public Customer first() throws NoSuchElementException{
+		if(this.customerQueue.size()==0){
+			 throw new NoSuchElementException();
+		 }
+		 else{
+			 return this.customerQueue.get(0);
+		 }
+	 }
+	
+	 public boolean isEmpty(){
+		 if(this.customerQueue.size()==0){
+			 return true;
+		 }
+		 else{
+			 return false;
+		 }
+	 }
+	
+	public int size(){
+		return this.customerQueue.size();
+	}
+	
+	*/
