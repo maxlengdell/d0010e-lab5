@@ -18,26 +18,33 @@ public class EventArrival extends Event {
 		
 	}
 
-
-
+	/**
+	 * Creates a new arriving customer and checks if this new customer can enter the supermarket.
+	 * Then it updates the appropriate state variables and creates a payment event if the customer could enter.
+	 * It also creates the next arrival event if the shop is still open.
+	 */
 	public void execute() {
 		Customer customer = new Customer(s.nextCustomerId(), s.getTimeState());
-		
+		// update waited time
+		// update free cash register time
 		if (s.getisOpen()) {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {
 				s.addCustomerAmount();
 				
-				double nextTime = time + s.getRandomTime();
-				s.getEventQueue().addEvent(new ArrivalEvent())  arrivalevent			
-			
+				double debitingTime = time + s.getRandomTime();
+				s.getEventQueue().addEvent(new DebitingEvent(debitingTime, s, customer))
 			}
 			else {
 				s.addMissedCustomer();
 			}
+			double nextArrivalTime = time + s.getRandomTime();
+			s.getEventQueue().addEvent(new ArrivalEvent(nextArrivalTime, s));
 		}
 		else {
 			
 		}
+		s.setTime(time);
+		s.setCurrentEvent(this);
 		s.notify();
 		
 	}
