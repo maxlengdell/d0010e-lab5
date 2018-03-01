@@ -7,6 +7,7 @@ public class State extends Observable{
 	
 	private boolean isActive;
 	private Event currentEvent; 
+	private Class currentEventType;
 	private EventQueue eventQueue;
 	
 	public State(double time, boolean isActive, EventQueue eventQueue){
@@ -44,7 +45,7 @@ public class State extends Observable{
 	}
 	
 	/*
-	 * 
+	 * CurrentEvent stuff
 	 */
 	public Event getCurrentEvent(){
 		return this.currentEvent;
@@ -52,6 +53,13 @@ public class State extends Observable{
 	public void changeEvent(Event newEvent){
 		this.currentEvent=newEvent;
 	}
+	public Class getCurrentEventType(){
+		return currentEventType;
+	}
+	public void setEventType(Class eventType){
+		currentEventType = eventType;
+	}
+	
 	
 	public void notifyStateObs(){
 		setChanged();

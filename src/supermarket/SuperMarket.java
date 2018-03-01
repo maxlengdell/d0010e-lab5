@@ -35,13 +35,29 @@ public class SuperMarket extends State {
 		super(time, isActive, eventQueue);
 		
 	}
-	
-	
+		
 	/*
 	 * CustomerQueue stuff
 	 */
 	public Customer[] getCustomerQueue() {
 		return customerQueue;
+	}
+	public Customer takeFirstCustomerFromQueue() {
+		Customer firstCustomer = customerQueue[0];
+		for (int i = 1; i < customerQueue.length; i++) {
+			customerQueue[i-1] = customerQueue[i];
+		}
+		customerQueue[customerQueue.length-1] = null;
+		return firstCustomer;
+	}
+	public void addCustomerToQueue(Customer newCustomer) {
+		for (int i = 0; i < customerQueue.length; i++) {
+			if (customerQueue[i] == null) {
+				customerQueue[i] = newCustomer;
+				break;
+			}
+		}
+		return;
 	}
 	
 	/*
@@ -49,74 +65,71 @@ public class SuperMarket extends State {
 	 */
 	public int nextCustomerId() {
 		customerIDCount++;
+		return customerIDCount;
 	}
 	
-	
-	
-	public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den koll själv. 
-		customerQueue.add(id); //Lägger till kundens id i kön.
-	}
-	public void removeFirst() throws NoSuchElementException{
-		if(customerQueue.size()==0){
-			throw new NoSuchElementException();
-		}
-		else{
-			this.customerQueue.remove(0);
-		}
-		
-	}
-	
-	public get
-	
-	public Customer first() throws NoSuchElementException{
-		if(this.customerQueue.size()==0){
-			 throw new NoSuchElementException();
-		 }
-		 else{
-			 return this.customerQueue.get(0);
-		 }
-	 }
-	
-	 public boolean isEmpty(){
-		 if(this.customerQueue.size()==0){
-			 return true;
-		 }
-		 else{
-			 return false;
-		 }
-	 }
-	
-	public int size(){
-		return this.customerQueue.size();
-	}
-	
-	
-	
-	
-	
+	/*
+	 * IsOpen stuff
+	 */
 	public boolean getisOpen(){
 		return isOpen;
 	}
+	public void changeOpenState(boolean changeOpenorClose){
+		isOpen=changeOpenorClose;
+		
+	}
+	
+	/*
+	 * MissedCustomer stuff
+	 */
+	public int getMissedCustomer(){
+		return missedCustomer;
+	}
+	public void addMissedCustomer(){
+		missedCustomer++;
+		return;
+	}
+	
+	/*
+	 * debitedCustomer stuff
+	 */
+	public int getDebitedCustomer(){
+		return debitedCustomer;
+	}
+	public void addDebitedCustomer(){
+		debitedCustomer++;
+		return;
+	}
+	
+	/*
+	 * CurrentCustomerAmount stuff
+	 */
+	public int getcurrentCustomerAmount(){
+		return currentCustomerAmount;	
+	}
+	public void addCurrentCustomerAmount(){
+		currentCustomerAmount++;
+		return;	
+	}
+	public void subCurrentCustomerAmount(){
+		currentCustomerAmount--;
+		return;	
+	}
+	
+	
 	
 	
 	public double getSkill(){
 		return skill;
 	}
-	public int getMissedCustomer(){
-		return missedCustomer;
-	}
-	public int getdebitedCustomer(){
-		return debitedCustomer;
-	}
+	
 	public int[] getcashRegister(){
 		return cashRegister;
 	}
 	public int getmaxCustomerAmount(){
 		return maxCustomerAmount;
 	}
-	public int getcurrentCustomerAmount(){
-		return currentCustomerAmount;	
-	}
+	
 	public double getwaitedTime(){
 		return waitedTime;
 	}
@@ -145,10 +158,7 @@ public class SuperMarket extends State {
 	}
 	
 	
-	public void changeOpenState(boolean changeOpenorClose){
-		isOpen=changeOpenorClose;
-		
-	}
+	
 	
 	
 
@@ -201,3 +211,46 @@ public class SuperMarket extends State {
 	}
 	
 	*/
+
+
+/*
+public void addQueue(Customer id) { // Tvivlar på att detta fungerar. Måste nog ta en ny int som arg. och så håller den koll själv. 
+		customerQueue.add(id); //Lägger till kundens id i kön.
+	}
+	public void removeFirst() throws NoSuchElementException{
+		if(customerQueue.size()==0){
+			throw new NoSuchElementException();
+		}
+		else{
+			this.customerQueue.remove(0);
+		}
+		
+	}
+	
+	
+	
+	public Customer first() throws NoSuchElementException{
+		if(this.customerQueue.size()==0){
+			 throw new NoSuchElementException();
+		 }
+		 else{
+			 return this.customerQueue.get(0);
+		 }
+	 }
+	
+	 public boolean isEmpty(){
+		 if(this.customerQueue.size()==0){
+			 return true;
+		 }
+		 else{
+			 return false;
+		 }
+	 }
+	
+	public int size(){
+		return this.customerQueue.size();
+	}
+ * 
+ */
+
+

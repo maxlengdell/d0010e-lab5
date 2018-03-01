@@ -9,7 +9,7 @@ public class EventDeparture extends Event {
 	Customer customer;
 	
 	public EventDeparture(double time, SuperMarket superMarket, Customer customer) {
-		super(time);
+		super(time, superMarket);
 		this.s = superMarket;
 		this.customer = customer;
 	}

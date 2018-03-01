@@ -12,10 +12,8 @@ public class EventArrival extends Event {
 
 	
 	public EventArrival(double time, SuperMarket superMarket) {
-		super(time);
+		super(time, superMarket);
 		this.s = superMarket;
-		
-		
 	}
 
 	/**
@@ -29,34 +27,34 @@ public class EventArrival extends Event {
 		// update free cash register time
 		if (s.getisOpen()) {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {
-				s.addCustomerAmount();
+				s.addCurrentCustomerAmount();
 				
 				double debitingTime = time + s.getRandomTime();
-				s.getEventQueue().addEvent(new DebitingEvent(debitingTime, s, customer))
+				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer))
 			}
 			else {
 				s.addMissedCustomer();
 			}
 			double nextArrivalTime = time + s.getRandomTime();
-			s.getEventQueue().addEvent(new ArrivalEvent(nextArrivalTime, s));
+			s.getEventQueue().addEvent(new EventArrival(nextArrivalTime, s));
 		}
 		else {
 			
 		}
 		s.setTimeState(time);
-		s.setCurrentEvent(this);
+		s.setEventType(this.getClass());
 		s.notifyStateObs();
 		
 	}
 
-
+/*
 	public void Arrives() {
 		 
 		//Initierar (check)
 		//Skapar id för kunden. (check)
 		//customer creates new object  to customer. (check)
 		//Puts the customer in the "shopping" list
-		if (supermarket.getisOpen()) {
+		if (s.getisOpen()) {
 			int id = 0;
 			Customer customer = new Customer(id, time);
 			id++;
@@ -65,7 +63,7 @@ public class EventArrival extends Event {
 		}
 
 	}
-
+*/
 
 }
 
