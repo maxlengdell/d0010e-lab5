@@ -12,9 +12,9 @@ public class EventOpen extends Event {
 		this.time=time;
 	}
 	public void Execute() {
+		s.updateTimeStatistics(0);
 		s.changeOpenState(true);
 		s.setEventCustomer(null);
-		s.updateTimeStatistics(0);
 		s.setEventType(this.getClass());
 		s.notifyStateObs();
 	}
