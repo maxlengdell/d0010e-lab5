@@ -189,6 +189,15 @@ public class SuperMarket extends State {
 		}
 		return;
 	}
+	public int amountOfFreeCashRegs() {
+		int regCount = 0;
+		for (int i = 0; i < cashRegister.length; i++) {
+			if (cashRegister[i] == 0) {
+				regCount++;
+			}
+		}
+		return regCount;
+	}
 	
 	/*
 	 * Event tracking stuff

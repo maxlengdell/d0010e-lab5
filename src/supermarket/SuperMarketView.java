@@ -45,7 +45,7 @@ public class SuperMarketView extends View {
 		double time = s.getTimeState();
 		int customerId = s.getEventCustomerId();
 		boolean isOpen = s.getisOpen();
-		int free = 4;
+		int free = s.amountOfFreeCashRegs();
 		double freeT = s.getFreeCashRegTime();
 		int currentCustAmount = s.getcurrentCustomerAmount();
 		int debited = s.getDebitedCustomer();
