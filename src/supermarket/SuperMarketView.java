@@ -59,20 +59,26 @@ public class SuperMarketView extends View {
 		int curQueue = s.customerAmountInQueue();
 
 		String event;
-		int eventType = s.getCurrentEvent().getEventType();
 		
-		switch(s.getCurrentEvent().getClass()) {
-		case s.getCurrentEventType() :
+		Class eventType = s.getCurrentEventType()
+				
+		if (eventType == EventOpen.class) {
 			event = open;
-			break;
-		case EventClose.class :
+		}	
+		else if (eventType == EventClose.class) {
 			event = close;
-			break;
-		case EventArrival.class :
+		}
+		else if (eventType == EventArrival.class) {
 			event = arrival;
-			break;
-		case EventDebiting.class :
+		}
+		else if (eventType == EventDebiting.class) {
 			event = paytime;
+		}
+		else if (eventType == ) {
+			event = 
+		}
+		case  :
+			event = ;
 			break;
 		case EventDeparture.class :
 			event = departure;
@@ -80,7 +86,7 @@ public class SuperMarketView extends View {
 		default :
 			event = error;
 			
-		}
+		
 		System.out.print(time+"\t"+event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t"+freeT+"\t"+currentCustAmount+"\t"+
 		debited+"\t"+missed+"\t"+queuedTot+"\t"+queueTime+"\t"+curQueue+"\t[");
 		
