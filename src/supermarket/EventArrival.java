@@ -43,9 +43,9 @@ public class EventArrival extends Event {
 		else {
 			
 		}
-		s.setTime(time);
+		s.setTimeState(time);
 		s.setCurrentEvent(this);
-		s.notify();
+		s.notifyStateObs();
 		
 	}
 

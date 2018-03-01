@@ -7,18 +7,27 @@ import simulator.State;
 
 
 public class SuperMarket extends State {
+	
 	private boolean isOpen=false;
 	
-	public ArrayList <Customer> customerQueue=new ArrayList<Customer>();
+	
+	// SuperMarket variables
 	private double skill;
-	private int missedCustomer=0;
-	private int debitedCustomer;
-	private int[] cashRegister={0,0,0,0}; //0 for vacant, 1 for occupied cashregister
 	private int maxCustomerAmount=10;
-	private int currentCustomerAmount=0;
-	private double waitedTime=0;
-	private int customerIDCount=1;
 	private double timeOpen=8.0;
+	
+	// SuperMarket statistics
+	private int missedCustomer = 0;
+	private int debitedCustomer = 0;
+	private double waitedTime = 0;
+	private double freeCashRegTime = 0;
+	
+	// Current State data
+	private int[] cashRegister = {0,0,0,0}; //0 for vacant, 1 for occupied cashregister
+	private int currentCustomerAmount = 0;
+	private int customerIDCount = 0;
+	
+	public ArrayList <Customer> customerQueue=new ArrayList<Customer>();
 	
 	public SuperMarket(){
 		super(0, true);
@@ -98,6 +107,11 @@ public class SuperMarket extends State {
 	
 	public double getTimeOpen(){
 		return timeOpen;
+	}
+	
+	public double getFreeCashRegTime(){
+		return this.freeCashRegTime;
+		
 	}
 	
 	public int cashRegStatus(){

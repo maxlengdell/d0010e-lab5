@@ -4,23 +4,48 @@ import java.util.Observable;
 
 public class State extends Observable{
 	private double time;
-	private double freeCashRegTime;
+	
 	private boolean isActive;
 	private Event currentEvent; 
-	public State(double time, boolean isActive){
+	private EventQueue eventQueue;
+	
+	public State(double time, boolean isActive, EventQueue eventQueue){
 		this.time=time;
 		this.isActive=isActive;
+		this.eventQueue = eventQueue;
 	}
+	
+	/*
+	 * Returns the time of the state
+	 */	
 	public double getTimeState(){
 		return this.time;
 	}
-	public double getFreeCashRegTime(){
-		return this.freeCashRegTime;
-		
+	/*
+	 * Sets the time of the state
+	 */
+	public void setTimeState(double newTime){
+		this.time = newTime;
+		return;
 	}
+	
+	/*
+	 * Returns the EventQueue that handles the state's events
+	 */
+	public EventQueue getEventQueue() {
+		return eventQueue;
+	}
+		
+	/*
+	 * Returns true if the state is active and false if not
+	 */
 	public boolean getisActive(){
 		return this.isActive;
 	}
+	
+	/*
+	 * 
+	 */
 	public Event getCurrentEvent(){
 		return this.currentEvent;
 	}
