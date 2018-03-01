@@ -23,7 +23,6 @@ public class EventDebiting extends Event {
 			double departureTime=time;
 			time+s.getRandomNumber()/s.getSkill();
 			s.getEventQueue().addEvent(new EventDeparture(departureTime, s, c));
-			s.addCustomerToQueue(c);
 			s.takeCashRegister();
 			//Place customer in the cashregister. 
 		
@@ -31,8 +30,9 @@ public class EventDebiting extends Event {
 		
 		if(s.cashRegStatus()==false){ //if cashregister is occupied. Execute this.
 			s.addCustomerToQueue(c);
-			
+			s.addQueuedCustomer();
 		}
+		
 		s.setEventCustomer(c);
 		s.setEventType(this.getClass());
 		s.notifyStateObs();
