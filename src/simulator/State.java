@@ -8,7 +8,7 @@ public class State extends Observable{
 	
 	private boolean isActive;
 	private Event currentEvent; 
-	private Class currentEventType;
+	private Class<?> currentEventType;
 	private EventQueue eventQueue;
 	
 	public State(double time, boolean isActive, EventQueue eventQueue){
