@@ -30,7 +30,7 @@ public class EventArrival extends Event {
 				s.addCurrentCustomerAmount();
 				
 				double debitingTime = time + s.getRandomTime();
-				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer))
+				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer));
 			}
 			else {
 				s.addMissedCustomer();

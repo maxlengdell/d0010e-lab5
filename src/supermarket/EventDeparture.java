@@ -17,11 +17,12 @@ public class EventDeparture extends Event {
 	public void execute() {
 		// update waited time
 		// update free cash register time
-		s.subCustomerAmount();
-		s.addDebitedCount();
-		if (s.getCustomerQueue().size()>0) {
+		s.subCurrentCustomerAmount();
+		s.addDebitedCustomer();
+		Customer nextCustomer = s.takeFirstCustomerFromQueue();
+		if (nextCustomer != null) {
 			double debitingTime = time + s.getRandomTime();
-			s.getEventQueue().addEvent(new EventDeparture(debitingTime, s, s.getCustomerQueue().getNextInQueue()));			
+			s.getEventQueue().addEvent(new EventDeparture(debitingTime, s, nextCustomer));			
 		}
 		else {
 			s.freeCashRegister();
