@@ -21,6 +21,7 @@ public class SuperMarket extends State {
 	// SuperMarket statistics
 	private int missedCustomer = 0;
 	private int debitedCustomer = 0;
+	private int queuedCustomer = 0;
 	private double waitedTime = 0;
 	private double freeCashRegTime = 0;
 	
@@ -44,9 +45,8 @@ public class SuperMarket extends State {
 	/*
 	 * Changes the supermarket variables
 	 */
-	public void changeVariables(int newNumberOfCashRegs, double newSkillLevel) {
+	public void changeVariables(int newNumberOfCashRegs) {
 		cashRegister = new int[newNumberOfCashRegs];
-		skill = newSkillLevel;
 	}
 	
 	
@@ -73,7 +73,7 @@ public class SuperMarket extends State {
 		}
 		return;
 	}
-	private int customerAmountInQueue() {
+	public int customerAmountInQueue() {
 		int queueCount = 0;
 		for (int i = 0; i < customerQueue.length; i++) {
 			if (customerQueue[i] == null) {
@@ -122,6 +122,17 @@ public class SuperMarket extends State {
 	}
 	public void addDebitedCustomer(){
 		debitedCustomer++;
+		return;
+	}
+	
+	/*
+	 * QueuedCustomer stuff
+	 */
+	public int getQueuedCustomer() {
+		return queuedCustomer;
+	}
+	public void addQueuedCustomer() {
+		queuedCustomer++;
 		return;
 	}
 	
@@ -189,7 +200,12 @@ public class SuperMarket extends State {
 		currentEventCustomer = newEventCustomer;
 	}
 	public int getEventCustomerId() {
-		return currentEventCustomer.getID();
+		if (currentEventCustomer == null) {
+			return 0;
+		}
+		else {
+			return currentEventCustomer.getID();
+		}
 	}
 	
 	

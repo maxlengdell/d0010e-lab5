@@ -48,21 +48,21 @@ public class SuperMarketView extends View {
 	public void update() {
 		double time = s.getTimeState();
 		int customerId = s.getEventCustomerId();
-		if (customerId == null)
 		boolean isOpen = s.getisOpen();
-		int free = IntStream.of(s.getcashRegister()).sum();
+		int free = 4;
 		double freeT = s.getFreeCashRegTime();
 		int currentCustAmount = s.getcurrentCustomerAmount();
-		int debited = s.getdebitedCustomer();
+		int debited = s.getDebitedCustomer();
 		int missed	= s.getMissedCustomer();
-		int queuedTot = s.getQueuedTot();			// TODO: placeholder method
+		int queuedTot = s.getQueuedCustomer();
 		double queueTime = s.getwaitedTime();
-		int curQueue = s.getCustomerQueue().size();		
-		ArrayList <Customer> queueList	= s.getCustomerQueue();
+		int curQueue = s.customerAmountInQueue();
+
 		String event;
 		int eventType = s.getCurrentEvent().getEventType();
+		
 		switch(s.getCurrentEvent().getClass()) {
-		case EventOpen.class :
+		case s.getCurrentEventType() :
 			event = open;
 			break;
 		case EventClose.class :
