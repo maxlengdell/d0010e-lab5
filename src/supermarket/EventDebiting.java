@@ -20,10 +20,9 @@ public class EventDebiting extends Event {
 			
 			double departureTime=time;
 			time+s.getRandomNumber()/s.getSkill();
-			s.getEventQueue().addEvent(new EventDeparture(departureTime));
+			s.getEventQueue().addEvent(new EventDeparture(departureTime, s, c));
 			s.addCustomerToQueue(c);
 			s.takeCashRegister();
-			s.
 			//Place customer in the cashregister. 
 		
 		}
