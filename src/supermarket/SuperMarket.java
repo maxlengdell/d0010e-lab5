@@ -15,6 +15,7 @@ public class SuperMarket extends State {
 	// SuperMarket variables
 	private double skill;
 	private int maxCustomerAmount=10;
+	private int numberOfCashRegisters;
 	private double timeOpen=8.0;
 	
 	// SuperMarket statistics
@@ -24,7 +25,7 @@ public class SuperMarket extends State {
 	private double freeCashRegTime = 0;
 	
 	// Current State data
-	private int[] cashRegister = {0,0,0,0}; // 0 for vacant, 1 for occupied cashregister
+	private int[] cashRegister = new int[numberOfCashRegisters]; // 0 for vacant, 1 for occupied cashregister
 	private Customer[] customerQueue = new Customer[maxCustomerAmount]; // public ArrayList <Customer> customerQueue=new ArrayList<Customer>(); This an alternative to a customer array
 	private int currentCustomerAmount = 0;
 	private int customerIDCount = 0;
@@ -139,8 +140,35 @@ public class SuperMarket extends State {
 		freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
 	}
 	
-	
-	
+	/*
+	 * CashRegister stuff
+	 */
+	public void freeCashRegister() {
+		for (int i = 0; i < cashRegister.length; i++) {
+			if (cashRegister[i] == 1) {
+				cashRegister[i] = 0;
+				return;
+			}
+		}
+		return;
+	}
+	public boolean cashRegStatus(){
+		for (int i = 0; i < cashRegister.length; i++) {
+			if (cashRegister[i] == 0) {
+				return true;	// There is at least one free cash register
+			}
+		}
+		return false;
+	}
+	public void takeCashRegister() {
+		for (int i = 0; i < cashRegister.length; i++) {
+			if (cashRegister[i] == 0) {
+				cashRegister[i] = 1;
+				return;
+			}
+		}
+		return;
+	}
 	
 	
 	public double getSkill(){
@@ -171,15 +199,7 @@ public class SuperMarket extends State {
 		
 	}
 	
-	public int cashRegStatus(){
-		for(int i=0; i<cashRegister.length;i++){
-			if(this.cashRegister[i]==0){
-				this.cashRegister[i]=1;
-				return 1;
-			}
-		}
-		return 0;
-	}
+	
 	
 	
 	
