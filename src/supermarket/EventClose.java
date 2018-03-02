@@ -17,7 +17,7 @@ public class EventClose extends Event {
 	}
 
 /** This method executes the event. The store is closed and the stop simulation event will occur afterwards*/
-	public void Execute() {
+	public void execute() {
 		s.updateTimeStatistics(time);
 		s.setEventCustomer(null);
 		s.changeOpenState(false);

@@ -16,7 +16,7 @@ public class SuperMarket extends State {
 	// SuperMarket variables
 	private double skill = 1;
 	private int maxCustomerAmount=10;
-	private int numberOfCashRegisters;
+	private int numberOfCashRegisters = 4;
 	private double timeOpen=8.0;
 	
 	// SuperMarket statistics
@@ -154,6 +154,16 @@ public class SuperMarket extends State {
 		currentCustomerAmount--;
 		return;	
 	}
+	
+	
+	
+	
+	public void notifyStateObs(){
+		setChanged();
+		notifyObservers();
+	}
+	
+	
 	
 	/* 
 	 * Update time statistics

@@ -25,7 +25,6 @@ public class EventQueue {
 			return true;
 		}
 		else {
-			System.out.println("Well shit");
 			return false;
 		}
 		
@@ -50,7 +49,6 @@ public class EventQueue {
 				if(event.getTime() < eventList.get(i).getTime()) { // Vilken klass ska hålla koll på tiden?
 					//Tveksamt om detta fungerar. hur får man det enskilda eventets tid?
 					eventList.add(i,event);
-					System.out.println(eventList);
 					added = true;
 
 					return;

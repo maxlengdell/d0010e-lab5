@@ -23,7 +23,7 @@ public class EventDebiting extends Event {
 	 * The type of event is set and the state observers are notified of the event.
 	 *  
 	 */
-	public void Execute() {
+	public void execute() {
 		//Time for how long the customer shopped*I think*(check)
 		//Puts the customer in the supermarket queue.
 		s.updateTimeStatistics(time);
@@ -35,12 +35,10 @@ public class EventDebiting extends Event {
 			//Place customer in the cashregister. 
 		
 		}
-		
-		if(s.cashRegStatus()==false){ //if cashregister is occupied. Execute this.
+		else { //if cashregister is occupied. Execute this.
 			s.addCustomerToQueue(c);
 			s.addQueuedCustomer();
 		}
-		
 		s.setEventCustomer(c);
 		s.setEventType(this.getClass());
 		s.notifyStateObs();

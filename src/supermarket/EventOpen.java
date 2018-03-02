@@ -18,7 +18,7 @@ public class EventOpen extends Event {
 		this.time=time;
 	}
 /**This method executes the event. The simulation begins and the store opens. The type of event is set and the state observers are notified*/
-	public void Execute() {
+	public void execute() {
 		s.updateTimeStatistics(0);
 		s.changeOpenState(true);
 		s.setEventCustomer(null);

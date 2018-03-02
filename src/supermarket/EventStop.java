@@ -17,7 +17,7 @@ public class EventStop extends Event {
 		
 	}
 	/** This method executes the event. The simulation will end and the stats updated*/
-	public void Execute(){
+	public void execute(){
 		s.updateTimeStatistics(time);
 		s.changeisActive(false);
 		s.setEventCustomer(null);

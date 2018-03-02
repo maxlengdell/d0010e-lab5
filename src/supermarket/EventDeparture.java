@@ -15,7 +15,7 @@ public class EventDeparture extends Event {
 		this.customer = customer;
 	}
 /**This method executes the event. A customer leaves and the stats are updated.*/
-	public void Execute() {
+	public void execute() {
 		s.updateTimeStatistics(time);
 		s.subCurrentCustomerAmount();
 		s.addDebitedCustomer();

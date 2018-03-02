@@ -1,5 +1,7 @@
 package supermarket;
 
+import java.util.Observable;
+
 /**
 *
 * @author Shahin, Max, Johan, Linus
@@ -40,11 +42,11 @@ public class SuperMarketView extends View {
 		koar		CurQueue= Number of customers in queue
 		kassako		IdQueue	= The queue of customer with id
 		*/
-		System.out.println("Time\tEvent\tCustomer\tOpen?\tFree\tFreeT\tI\t$\tMissed\tQueueTot\tQueueT\tCurQueue\tIdQueue");
+		System.out.println("Time\tEvent\t\t\tCustomer\tOpen?\tFree\tFreeT\tI\t$\tMissed\tQueueTot\tQueueT\tCurQueue\tIdQueue");
 	}
 
 	
-	public void update() {
+	public void update(Observable arg0, Object arg1) {
 		double time = s.getTimeState();
 		int customerId = s.getEventCustomerId();
 		boolean isOpen = s.getisOpen();

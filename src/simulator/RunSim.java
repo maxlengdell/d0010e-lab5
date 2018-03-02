@@ -19,10 +19,7 @@ public class RunSim {
     public static void run(EventQueue eq, SuperMarket S){
         while(S.getisActive()){
             //get next event in queue and execute
-            if (eq.executeNext()) {
-            	System.out.println("this is not the error you are looking for");
-            }
-            else {
+            if (!eq.executeNext()) {
             	break;
             }
         }
