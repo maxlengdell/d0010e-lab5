@@ -33,7 +33,7 @@ public class SuperMarket extends State {
 	private int customerIDCount = 0;
 	
 	// Resources
-	private SuperMarketRandomGen rng = new SuperMarketRandomGen();
+	private SuperMarketRandomGen rng = new SuperMarketRandomGen(42, 4, 0.01, 0.15);
 	
 	// Event tracking
 	private Customer currentEventCustomer;
@@ -41,6 +41,7 @@ public class SuperMarket extends State {
 	/*
 	 * Constructor
 	 */
+	@SuppressWarnings("deprecation")
 	public SuperMarket(double time, boolean isActive, EventQueue eventQueue){
 		super(time, isActive, eventQueue);
 		this.time = time;
@@ -52,7 +53,6 @@ public class SuperMarket extends State {
 	public void changeVariables(int newNumberOfCashRegs) {
 		cashRegister = new int[newNumberOfCashRegs];
 	}
-	
 	
 	/*
 	 * CustomerQueue stuff

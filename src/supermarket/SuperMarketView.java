@@ -21,8 +21,9 @@ public class SuperMarketView extends View {
 	String departure = new String("Customer departure    ");
 	String error = new String("Unknown               ");
 	
-	public SuperMarketView(SuperMarket superMarket) {
-		this.s = superMarket;
+	public SuperMarketView(SuperMarket s) {
+		this.s = s;
+		s.addObserver(this);
 		/*
 		Tid			Time 	= Time of event
 		Händelse	Event 	= Type of event
@@ -40,6 +41,7 @@ public class SuperMarketView extends View {
 		*/
 		System.out.println("Time\tEvent\tCustomer\tOpen?\tFree\tFreeT\tI\t$\tMissed\tQueueTot\tQueueT\tCurQueue\tIdQueue");
 	}
+
 	
 	public void update() {
 		double time = s.getTimeState();

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class EventQueue {
 
 	
-	public ArrayList <Event> eventList;
+	public ArrayList <Event> eventList = new ArrayList<Event>();
 
 	public void addEvent(Event event){
 		parseEvents(event.getTime(), event);

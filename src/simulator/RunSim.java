@@ -4,9 +4,7 @@ package simulator;
 * @author Shahin, Max, Johan, Linus
 *
 */
-import random.ExponentialRandomStream;
-import supermarket.EventArrival;
-import supermarket.SuperMarket;
+import supermarket.*;
 
 public class RunSim {
     /*
@@ -28,12 +26,18 @@ public class RunSim {
     public static void main(String[] args) {
         //Start simulation by calling for the arrival event -> will put in Eque and all will start
         //Create all objects for the constructors give supermarket EQ and give supermarket to EA
-        EventQueue EQ = new EventQueue();
-        SuperMarket SM = new SuperMarket(0,true,EQ);
-        EventArrival EA = new EventArrival(0,SM);
-        EA.execute();
+        EventQueue eq = new EventQueue();
+        
+        SuperMarket sm = new SuperMarket(0,true,eq);
+        SuperMarketView smView = new SuperMarketView(sm);
+        
+        eq.addEvent(new EventOpen(sm, 0));
+        eq.addEvent(new EventClose(8, sm));
+        double time = sm.getRnG().getRnGExponential();
+        eq.addEvent(new EventArrival(time, sm));
+        
         //now run eventQueue
-        run(EQ,SM);
+        run(eq,sm);
 
 
     }
