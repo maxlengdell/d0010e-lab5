@@ -9,7 +9,8 @@ public class EventQueue {
 	public ArrayList <Event> eventList;
 
 	public void addEvent(Event event){//Nödvändigt??
-		eventList.add(event);
+		parseEvents(event.getTime(), event);
+		
 
 	}
 	public void executeNext(Event event){
@@ -23,7 +24,7 @@ public class EventQueue {
 		eventList.remove(0);
 		return first;
 	}
-	public void parseEvents(int scheduledTime, Event event) { 
+	public void parseEvents(double scheduledTime, Event event) { 
 		//Adds event to eventList in order based on scheduled time. 
 		if (eventList.size() == 0) {
 			eventList.add(event);
@@ -32,6 +33,7 @@ public class EventQueue {
 				if(scheduledTime > eventList.get(i).getTime()) { // Vilken klass ska hålla koll på tiden?
 					//Tveksamt om detta fungerar. hur får man det enskilda eventets tid?
 					eventList.add(i,event);
+					System.out.println(eventList);
 
 					break;
 
