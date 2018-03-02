@@ -21,6 +21,7 @@ public class SuperMarketView extends View {
 	String departure = new String("Customer departure    ");
 	String error = new String("Unknown               ");
 	
+	@SuppressWarnings("deprecation")
 	public SuperMarketView(SuperMarket s) {
 		this.s = s;
 		s.addObserver(this);

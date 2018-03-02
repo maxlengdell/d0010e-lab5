@@ -17,10 +17,17 @@ public class EventQueue {
 		
 
 	}
-	public void executeNext(Event event){
-		Event first = eventList.get(0);
-		eventList.remove(0);
-		first.Execute();
+	public boolean executeNext(){
+		if (eventList.size() > 0) {
+			Event first = eventList.get(0);
+			eventList.remove(0);
+			first.Execute();
+			return true;
+		}
+		else {
+			System.out.println("Well shit");
+			return false;
+		}
 		
 
 	}

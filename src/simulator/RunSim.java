@@ -16,10 +16,15 @@ public class RunSim {
 
 
 
-    public static void run(EventQueue EQ, SuperMarket S){
+    public static void run(EventQueue eq, SuperMarket S){
         while(S.getisActive()){
             //get next event in queue and execute
-            EQ.eventList.get(0).Execute();
+            if (eq.executeNext()) {
+            	System.out.println("this is not the error you are looking for");
+            }
+            else {
+            	break;
+            }
         }
     }
 
@@ -32,9 +37,9 @@ public class RunSim {
         SuperMarketView smView = new SuperMarketView(sm);
         
         eq.addEvent(new EventOpen(sm, 0));
-        eq.addEvent(new EventClose(8, sm));
         double time = sm.getRnG().getRnGExponential();
         eq.addEvent(new EventArrival(time, sm));
+        eq.addEvent(new EventClose(8, sm));
         
         //now run eventQueue
         run(eq,sm);
