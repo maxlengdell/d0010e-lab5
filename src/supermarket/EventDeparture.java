@@ -17,7 +17,6 @@ public class EventDeparture extends Event {
 /**This method executes the event. A customer leaves and the stats are updated.*/
 	public void Execute() {
 		s.updateTimeStatistics(time);
-		
 		s.subCurrentCustomerAmount();
 		s.addDebitedCustomer();
 		Customer nextCustomer = s.takeFirstCustomerFromQueue();
@@ -27,8 +26,7 @@ public class EventDeparture extends Event {
 		}
 		else {
 			s.freeCashRegister();
-		}		
-		
+		}			
 		s.setTimeState(time);
 		s.setEventType(this.getClass());
 		s.setEventCustomer(customer);
