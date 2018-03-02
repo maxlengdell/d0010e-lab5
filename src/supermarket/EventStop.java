@@ -16,8 +16,7 @@ public class EventStop extends Event {
 		this.time=time; //stop at 1000
 		
 	}
-	/** This method executes the event. The simulation is no longer active/running, time is updated, the type of event is set and the
-	 * state observers are notified*/
+	/** This method executes the event. The simulation will end and the stats updated*/
 	public void Execute(){
 		s.updateTimeStatistics(time);
 		s.changeisActive(false);
