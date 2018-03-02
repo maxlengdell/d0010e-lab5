@@ -27,13 +27,13 @@ public class EventArrival extends Event {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {
 				s.addCurrentCustomerAmount();
 				
-				double debitingTime = time + s.getRandomPickingTime();
+				double debitingTime = time + s.getRnG().getRandomNumber();
 				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer));
 			}
 			else {
 				s.addMissedCustomer();
 			}
-			double nextArrivalTime = time + s.getRandomTime();
+			double nextArrivalTime = time + s.getRnG().getRandomNumber();
 			s.getEventQueue().addEvent(new EventArrival(nextArrivalTime, s));
 		}
 		else {
