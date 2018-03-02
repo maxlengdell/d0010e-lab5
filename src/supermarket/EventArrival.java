@@ -20,6 +20,7 @@ public class EventArrival extends Event {
 	 * It also creates the next arrival event if the shop is still open.
 	 */
 	public void execute() {
+		System.out.println("I exist!");
 		Customer customer = new Customer(s.nextCustomerId(), s.getTimeState());
 		s.updateTimeStatistics(time);
 		

@@ -19,7 +19,7 @@ public class Optimize {
 			
 			supermarket.changeVariables(i);
 			while(S.getisActive()) {
-				EQ.eventList.get(0).Execute();
+				EQ.eventList.get(0).execute();
 			}
 			//Måste jämföra minsta antalet missade kunder och publicera vilket som är mest lämpligt.
 		}

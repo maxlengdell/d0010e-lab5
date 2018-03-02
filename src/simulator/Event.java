@@ -22,7 +22,7 @@ public abstract class Event {
 	public State getState() {
 		return state;
 	}
-	public void Execute() {
+	public void execute() {
 		
 	}
 

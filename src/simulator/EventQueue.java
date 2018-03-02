@@ -21,7 +21,7 @@ public class EventQueue {
 		if (eventList.size() > 0) {
 			Event first = eventList.get(0);
 			eventList.remove(0);
-			first.Execute();
+			first.execute();
 			return true;
 		}
 		else {
