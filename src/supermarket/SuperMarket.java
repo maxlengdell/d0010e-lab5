@@ -28,6 +28,9 @@ public class SuperMarket extends State {
 	private int currentCustomerAmount = 0;
 	private int customerIDCount = 0;
 	
+	// Resources
+	private SuperMarketRandomGen rng = new SuperMarketRandomGen();
+	
 	// Event tracking
 	private Customer currentEventCustomer;
 	
@@ -214,6 +217,12 @@ public class SuperMarket extends State {
 		}
 	}
 	
+	/*
+	 * RandomGen stuff
+	 */
+	public SuperMarketRandomGen getRnG() {
+		return rng;
+	}
 	
 	public double getSkill(){
 		return skill;

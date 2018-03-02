@@ -20,7 +20,7 @@ public class EventDebiting extends Event {
 		s.updateTimeStatistics(time);
 		if(s.cashRegStatus()==true) {//if cashregister is free. Execute this. 
 			
-			double departureTime=time+s.getRandomNumber()/s.getSkill();
+			double departureTime=time+s.getRnG().getRandomNumber()/s.getSkill();
 			s.getEventQueue().addEvent(new EventDeparture(departureTime, s, c));
 			s.takeCashRegister();
 			//Place customer in the cashregister. 
