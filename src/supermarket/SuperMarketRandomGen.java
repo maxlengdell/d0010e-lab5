@@ -1,15 +1,28 @@
 package supermarket;
 
-import random.ExponentialRandomStream;
-import random.UniformRandomStream;
+import random.*;
 
 public class SuperMarketRandomGen {
 	
-	public ExponentialRandomStream getExponentialRandomStream(){
-		return new ExponentialRandomStream(15);
+	// Arrival = exp
+	// Debiting = uni
+	// Lambda = 4
+	// uni 0.05 = 0.25
+	
+	private ExponentialRandomStream expRS;
+	private UniformRandomStream uniRS;
+	
+	public SuperMarketRandomGen(long seed, double expLambda, double uniLower, double uniUpper) {
+		expRS = new ExponentialRandomStream(expLambda, seed);
+		uniRS = new UniformRandomStream(uniLower, uniUpper, seed);
 	}
-	public UniformRandomStream getUniformRandomStream(){
-		return new UniformRandomStream(0, 0);
+		
+	public double getRnGUniform(){
+		return uniRS.next();
+		
+	}
+	public double getRnGExponential(){
+		return expRS.next();
 	}
 	
 
