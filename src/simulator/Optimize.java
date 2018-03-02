@@ -1,5 +1,9 @@
 package simulator;
-
+/**
+*
+* @author Shahin, Max, Johan, Linus
+*
+*/
 import random.ExponentialRandomStream;
 import supermarket.EventArrival;
 import supermarket.SuperMarket;

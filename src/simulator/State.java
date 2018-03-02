@@ -1,5 +1,9 @@
 package simulator;
-
+/**
+*
+* @author Shahin, Max, Johan, Linus
+*
+*/
 import java.util.Observable;
 
 @SuppressWarnings("deprecation")

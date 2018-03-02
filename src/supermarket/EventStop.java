@@ -1,5 +1,9 @@
 package supermarket;
-
+/**
+*
+* @author Shahin, Max, Johan, Linus
+*
+*/
 import simulator.Event;
 
 public class EventStop extends Event {

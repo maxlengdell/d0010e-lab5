@@ -1,9 +1,9 @@
 package simulator;
 /**
- * 
- * GLÖM EJ NOTIFYOBSERVERS!
- *
- */
+*
+* @author Shahin, Max, Johan, Linus
+*
+*/
 
 public abstract class Event {
 	
