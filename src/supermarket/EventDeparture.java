@@ -1,20 +1,21 @@
 package supermarket;
 
 import simulator.*;
-
+/**This class describes the event that occurs when a customer is leaving the store*/
 public class EventDeparture extends Event {
 
 	double time;
 	SuperMarket s;
 	Customer customer;
-	
+/**The constructor for the class EventDeparture. References are made to the time of the event, the state of the supermarket simulation and the customer */
 	public EventDeparture(double time, SuperMarket superMarket, Customer customer) {
 		super(time, superMarket);
+		this.time=time;
 		this.s = superMarket;
 		this.customer = customer;
 	}
-	
-	public void execute() {
+/**This method executes the event. A customer leaves and the stats are updated.*/
+	public void Execute() {
 		s.updateTimeStatistics(time);
 		
 		s.subCurrentCustomerAmount();
