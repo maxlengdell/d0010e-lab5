@@ -88,6 +88,7 @@ public class SuperMarketView extends View {
 		System.out.print(curQueue+"\t[");
 		
 		Customer[] customerQueue = s.getCustomerQueue();
+//		System.out.print(customerQueue.length + ", ");
 				
 		
 		for (int i = 0; i < customerQueue.length; i++) {
