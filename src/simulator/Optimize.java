@@ -12,7 +12,7 @@ import supermarket.SuperMarket;
 import supermarket.SuperMarketView;
 import simulator.State;
 
-/*
+
 public class Optimize {
 	private static SuperMarket supermarket;
 	
@@ -51,4 +51,3 @@ public class Optimize {
         cashOpen(eq,sm);
 	}
 }
-*/
