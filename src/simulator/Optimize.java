@@ -16,15 +16,38 @@ import simulator.State;
 
 public class Optimize {
 	private static SuperMarket supermarket;
-	
-	
-	public static void cashOpen(EventQueue eq, SuperMarket S) {
+	private static int max =5;
+	private static int cash =1;
+	private static double time;
+
+	public static void cashOpen() {
+
 		for (int i = 0; i < 10; i++) {
-			
-			 while(S.getisActive()){
-		            //get next event in queue and execute
+		    //dont need ++ can use + 0.5 or whatever is appropriate.
+		    max++;
+		    cash++;
+		    time++;
+            System.out.println("\n--------------------------------");
+            System.out.print("Maxcust: "+max+"\tCashregs: "+cash+"\tTimeopen: "+time);
+		    //change multiple scenarios
+            EventQueue eq = new EventQueue();
+
+            SuperMarket sm = new SuperMarket(0,true,eq, 0.5,max,cash,time);
+            //   SuperMarketView smView = new SuperMarketView(sm);
+
+            eq.addEvent(new EventOpen(sm, 0));
+            double time = sm.getRnG().getRnGExponential();
+            eq.addEvent(new EventArrival(time, sm));
+            eq.addEvent(new EventClose(8, sm));
+            eq.addEvent(new EventStop(999,sm));
+            //individual sim run
+			 while(sm.getisActive()){
+
+                 //get next event in queue and execute
 		            if (!eq.executeNext()) {
-		            	System.out.println("STOP!");
+                        System.out.println("\nWaited time: "+sm.getwaitedTime());
+                        System.out.println("Missed customer: "+sm.getMissedCustomer());
+                        System.out.println("Idle cashregTime: "+sm.getFreeCashRegTime());
 		            	break;
 		            }
 		        }
@@ -38,6 +61,7 @@ public class Optimize {
 //		temp = 
 //	}
 	public static void main(String[] args) {
+	    /*
         EventQueue eq = new EventQueue();
         
           SuperMarket sm = new SuperMarket(0,true,eq, 0.5,10,2,8.0);
@@ -48,8 +72,8 @@ public class Optimize {
         eq.addEvent(new EventArrival(time, sm));
         eq.addEvent(new EventClose(8, sm));
         eq.addEvent(new EventStop(999,sm));
-        
+        */
         //now run eventQueue
-        cashOpen(eq,sm);
+        cashOpen();
 	}
 }

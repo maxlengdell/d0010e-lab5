@@ -52,10 +52,9 @@ public class SuperMarket extends State {
 		this.maxCustomerAmount=max;
 		this.numberOfCashRegisters=cash;
 		this.timeOpen=timeopen;
-		System.out.println("CASHISH: "+cashRegister.length); //THIS GAVE ZERO
 		cashRegister = new int[cash];
 		customerQueue=new Customer[max];
-		System.out.println("CASHISH 2.0: "+cashRegister.length); //NOT ZERO ANYMORE
+
 	}
 /**This method changes the amount of cash registers for each run of the simulation*/
 	public void changeVariables(int newNumberOfCashRegs) {
