@@ -86,6 +86,7 @@ public class SuperMarketView extends View {
 		System.out.print(currentCustAmount+"\t"+debited+"\t"+missed+"\t"+queuedTot+"\t");
 		System.out.printf("%.2f\t", queueTime);
 		System.out.print(curQueue+"\t[");
+
 		
 		Customer[] customerQueue = s.getCustomerQueue();
 				
