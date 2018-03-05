@@ -8,9 +8,9 @@ import supermarket.*;
 
 public class RunSim {
     /*
-    So basically we get a generated time from the randomgen. This value is gonna be passed to the respective event.
+    So basically we get a generated time from the randomgen. This value is going to be passed to the respective event.
     Example exponential has the random lambda generator. Event has to call this and get the value somehow?
-    Every ArrivalEvent is to generate the next arrival event aswell. So arrival event has to call for exporandom
+    Every ArrivalEvent is to generate the next arrival event as well. So arrival event has to call for exporandom
 */
     //When we get the stop signal we set run to false!
 
