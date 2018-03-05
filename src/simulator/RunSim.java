@@ -37,6 +37,7 @@ public class RunSim {
         double time = sm.getRnG().getRnGExponential();
         eq.addEvent(new EventArrival(time, sm));
         eq.addEvent(new EventClose(8, sm));
+        eq.addEvent(new EventStop(999,sm));
         
         //now run eventQueue
         run(eq,sm);

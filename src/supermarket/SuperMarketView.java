@@ -22,7 +22,7 @@ public class SuperMarketView extends View {
 	String paytime = new String("Wishes to pay");
 	String departure = new String("Departure    ");
 	String error = new String("Unknown      ");
-	
+	String stop = new String("Stop");
 	@SuppressWarnings("deprecation")
 	public SuperMarketView(SuperMarket s) {
 		this.s = s;
@@ -77,6 +77,12 @@ public class SuperMarketView extends View {
 		else if (eventType == EventDeparture.class) {
 			event = departure;
 		}
+		else if (eventType == EventStop.class){
+		    event = stop; // hehe
+            System.out.println(time+"\tStop");
+            return;
+
+        }
 		else {
 			event = error;
 		}

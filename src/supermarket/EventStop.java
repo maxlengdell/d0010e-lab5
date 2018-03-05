@@ -24,11 +24,13 @@ public class EventStop extends Event {
 	}
 	/** This method executes the event. The simulation will end and the stats updated*/
 	public void execute(){
+		s.setTimeState(this.time);
 		s.updateTimeStatistics(time);
 		s.changeisActive(false);
 		s.setEventCustomer(null);
 		s.setEventType(this.getClass());
 		s.notifyStateObs();
+
 	}
 	
 }
