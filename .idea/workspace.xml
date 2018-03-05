@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="bee6cc25-a3e1-454d-860c-3d31b19db49d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/supermarket/SuperMarket.java" afterPath="$PROJECT_DIR$/src/supermarket/SuperMarket.java" />
-      <change beforePath="$PROJECT_DIR$/src/supermarket/SuperMarketView.java" afterPath="$PROJECT_DIR$/src/supermarket/SuperMarketView.java" />
+      <change beforePath="$PROJECT_DIR$/bin/supermarket/SuperMarket.class" afterPath="$PROJECT_DIR$/bin/supermarket/SuperMarket.class" />
+      <change beforePath="$PROJECT_DIR$/src/simulator/Event.java" afterPath="$PROJECT_DIR$/src/simulator/Event.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/Customer.java" afterPath="$PROJECT_DIR$/src/supermarket/Customer.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/EventArrival.java" afterPath="$PROJECT_DIR$/src/supermarket/EventArrival.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/EventClose.java" afterPath="$PROJECT_DIR$/src/supermarket/EventClose.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/EventDebiting.java" afterPath="$PROJECT_DIR$/src/supermarket/EventDebiting.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/EventDeparture.java" afterPath="$PROJECT_DIR$/src/supermarket/EventDeparture.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/EventOpen.java" afterPath="$PROJECT_DIR$/src/supermarket/EventOpen.java" />
+      <change beforePath="$PROJECT_DIR$/src/supermarket/EventStop.java" afterPath="$PROJECT_DIR$/src/supermarket/EventStop.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SuperMarket.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SuperMarket.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/supermarket/SuperMarket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="1026">
               <caret line="57" column="83" lean-forward="false" selection-start-line="57" selection-start-column="83" selection-end-line="57" selection-end-column="83" />
               <folding>
                 <element signature="e#1189#1221#0" expanded="true" />
@@ -58,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuperMarketView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SuperMarketView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/supermarket/SuperMarketView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="894">
+              <caret line="97" column="13" lean-forward="false" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
               <folding>
                 <marker date="1520241250764" expanded="true" signature="2840:2950" ph="{...}" />
               </folding>
@@ -73,8 +80,8 @@
       <file leaf-file-name="EventArrival.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/supermarket/EventArrival.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+            <state relative-caret-position="-6">
+              <caret line="11" column="63" lean-forward="true" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -83,8 +90,8 @@
       <file leaf-file-name="EventDebiting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/supermarket/EventDebiting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="504">
+              <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -104,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/src/simulator/RunSim.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -382,7 +389,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -575,7 +582,7 @@
         <state relative-caret-position="414">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <marker date="1520070589529" expanded="true" signature="19:23" ph="/**...*/" />
+            <marker date="1520241348943" expanded="true" signature="19:23" ph="/**...*/" />
           </folding>
         </state>
       </provider>
@@ -691,7 +698,7 @@
         <state relative-caret-position="450">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <marker date="1520070589529" expanded="true" signature="19:23" ph="/**...*/" />
+            <marker date="1520241348943" expanded="true" signature="19:23" ph="/**...*/" />
           </folding>
         </state>
       </provider>
@@ -802,6 +809,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +826,7 @@
         <state relative-caret-position="414">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <marker date="1520070589529" expanded="true" signature="19:23" ph="/**...*/" />
+            <marker date="1520241348943" expanded="true" signature="19:23" ph="/**...*/" />
           </folding>
         </state>
       </provider>
@@ -871,33 +879,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulator/RunSim.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/supermarket/EventArrival.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        <state relative-caret-position="-6">
+          <caret line="11" column="63" lean-forward="true" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/supermarket/EventDebiting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="504">
+          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulator/RunSim.java">
+    <entry file="file://$PROJECT_DIR$/src/supermarket/SuperMarketView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="894">
+          <caret line="97" column="13" lean-forward="false" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+          <folding>
+            <marker date="1520241250764" expanded="true" signature="2840:2950" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/supermarket/SuperMarket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="1026">
           <caret line="57" column="83" lean-forward="false" selection-start-line="57" selection-start-column="83" selection-end-line="57" selection-end-column="83" />
           <folding>
             <element signature="e#1189#1221#0" expanded="true" />
@@ -931,16 +949,6 @@
             <element signature="e#8228#8229#0" expanded="true" />
             <element signature="e#8328#8329#0" expanded="true" />
             <element signature="e#8350#8351#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supermarket/SuperMarketView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <marker date="1520241250764" expanded="true" signature="2840:2950" ph="{...}" />
           </folding>
         </state>
       </provider>
