@@ -12,7 +12,14 @@ public class EventDebiting extends Event {
 	double time;
 	SuperMarket s;
 	Customer c;
-	/**The constructor for the class EventDebiting. References are made to time of event, state of the supermarket simulation and the customer/customers*/
+	/**The constructor for the class EventDebiting. References are made to time of event, state of the supermarket simulation and the customer/customers when a 
+	 * EventDebiting object is created.*/
+	/**
+	 * 
+	 * @param time
+	 * @param s
+	 * @param c
+	 */
 	public EventDebiting(double time, SuperMarket s, Customer c){
 		super(time,s);
 		this.s=s;
