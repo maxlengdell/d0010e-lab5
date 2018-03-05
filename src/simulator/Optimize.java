@@ -8,6 +8,7 @@ import random.ExponentialRandomStream;
 import supermarket.EventArrival;
 import supermarket.EventClose;
 import supermarket.EventOpen;
+import supermarket.EventStop;
 import supermarket.SuperMarket;
 import supermarket.SuperMarketView;
 import simulator.State;
@@ -18,12 +19,12 @@ public class Optimize {
 	
 	
 	public static void cashOpen(EventQueue eq, SuperMarket S) {
-		for (int i = 0; i < supermarket.getmaxCustomerAmount(); i++) {
+		for (int i = 0; i < 10; i++) {
 			
-			supermarket.changeVariables(3);
 			 while(S.getisActive()){
 		            //get next event in queue and execute
 		            if (!eq.executeNext()) {
+		            	System.out.println("STOP!");
 		            	break;
 		            }
 		        }
@@ -46,6 +47,7 @@ public class Optimize {
         double time = sm.getRnG().getRnGExponential();
         eq.addEvent(new EventArrival(time, sm));
         eq.addEvent(new EventClose(8, sm));
+        eq.addEvent(new EventStop(999,sm));
         
         //now run eventQueue
         cashOpen(eq,sm);

@@ -16,10 +16,10 @@ public class SuperMarket extends State {
 	// SuperMarket variables
 	// we put this in RunSim and give to constructor instead thank u.
 
-	private double skill = 0.5;
-	private int maxCustomerAmount = 10;
-	private int numberOfCashRegisters = 2;
-	private double timeOpen = 8.0;
+	private double skill;
+	private int maxCustomerAmount;
+	private int numberOfCashRegisters;
+	private double timeOpen;
 	
 	// SuperMarket statistics
 	private int missedCustomer = 0;
