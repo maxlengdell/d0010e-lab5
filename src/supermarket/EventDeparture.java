@@ -7,7 +7,14 @@ public class EventDeparture extends Event {
 	double time;
 	SuperMarket s;
 	Customer customer;
-/**The constructor for the class EventDeparture. References are made to the time of the event, the state of the supermarket simulation and the customer */
+/**The constructor for the class EventDeparture. References are made to the time of the event, the state of the supermarket simulation and the customer
+ * when a EventDeparture object is created */
+/**
+ * 
+ * @param time
+ * @param superMarket
+ * @param customer
+ */
 	public EventDeparture(double time, SuperMarket superMarket, Customer customer) {
 		super(time, superMarket);
 		this.time=time;

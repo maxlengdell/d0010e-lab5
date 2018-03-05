@@ -1,5 +1,5 @@
 package supermarket;
-
+/**@author Shahin, Max, Johan, Linus*/
 import simulator.*;
 
 public class EventArrival extends Event {
