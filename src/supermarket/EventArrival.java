@@ -12,6 +12,7 @@ public class EventArrival extends Event {
 	public EventArrival(double time, SuperMarket superMarket) {
 		super(time, superMarket);
 		this.s = superMarket;
+		this.time = time;
 	}
 
 	/**
@@ -27,19 +28,19 @@ public class EventArrival extends Event {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {
 				s.addCurrentCustomerAmount();
 				
-				double debitingTime = time + s.getRnG().getRnGUniform()*3;
+				double debitingTime = this.time + s.getRnG().getRnGUniform()*2;
 				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer));
 			}
 			else {
 				s.addMissedCustomer();
 			}
-			double nextArrivalTime = time + s.getRnG().getRnGExponential();
+			double nextArrivalTime = this.time + s.getRnG().getRnGExponential();
 			s.getEventQueue().addEvent(new EventArrival(nextArrivalTime, s));
 		}
 		else {
 			
 		}
-		s.setTimeState(time);
+		s.setTimeState(this.time);
 		s.setEventType(this.getClass());
 		s.setEventCustomer(customer);
 		

@@ -16,12 +16,12 @@ public class SuperMarketView extends View {
 	SuperMarket s;
 	
 	// Event descriptions
-	String open = new String("Open                  ");
-	String close = new String("Close                 ");
-	String arrival = new String("Customer arrival      ");
-	String paytime = new String("Customer wishes to pay");
-	String departure = new String("Customer departure    ");
-	String error = new String("Unknown               ");
+	String open = new String("Open         ");
+	String close = new String("Close        ");
+	String arrival = new String("Arrival      ");
+	String paytime = new String("Wishes to pay");
+	String departure = new String("Departure    ");
+	String error = new String("Unknown      ");
 	
 	@SuppressWarnings("deprecation")
 	public SuperMarketView(SuperMarket s) {
@@ -42,7 +42,7 @@ public class SuperMarketView extends View {
 		koar		CurQueue= Number of customers in queue
 		kassako		IdQueue	= The queue of customer with id
 		*/
-		System.out.println("Time\tEvent\t\t\tCustomer\tOpen?\tFree\tFreeT\tI\t$\tMissed\tQueueTot\tQueueT\tCurQueue\tIdQueue");
+		System.out.println("Time\tEvent\t\tId\tOpen?\tFree\tFreeT\tI\t$\tMissed\tTotQ\tQueueT\tCurQ\tIdQueue");
 	}
 
 	
@@ -80,9 +80,12 @@ public class SuperMarketView extends View {
 		else {
 			event = error;
 		}
-		
-		System.out.print(time+"\t"+event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t"+freeT+"\t"+currentCustAmount+"\t"+
-		debited+"\t"+missed+"\t"+queuedTot+"\t"+queueTime+"\t"+curQueue+"\t[");
+		System.out.printf("%.2f\t", time);
+		System.out.print(event+"\t"+customerId+"\t"+isOpen+"\t"+free+"\t");
+		System.out.printf("%.2f\t", freeT);
+		System.out.print(currentCustAmount+"\t"+debited+"\t"+missed+"\t"+queuedTot+"\t");
+		System.out.printf("%.2f\t", queueTime);
+		System.out.print(curQueue+"\t[");
 		
 		Customer[] customerQueue = s.getCustomerQueue();
 				

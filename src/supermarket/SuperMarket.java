@@ -14,9 +14,9 @@ public class SuperMarket extends State {
 	double time;
 	
 	// SuperMarket variables
-	private double skill = 1;
+	private double skill = 0.5;
 	private int maxCustomerAmount=10;
-	private int numberOfCashRegisters = 4;
+	private int numberOfCashRegisters = 2;
 	private double timeOpen=8.0;
 	
 	// SuperMarket statistics
@@ -33,7 +33,7 @@ public class SuperMarket extends State {
 	private int customerIDCount = 0;
 	
 	// Resources
-	private SuperMarketRandomGen rng = new SuperMarketRandomGen(42, 4, 0.01, 0.15);
+	private SuperMarketRandomGen rng = new SuperMarketRandomGen(42, 6, 0.05, 0.4);
 	
 	// Event tracking
 	private Customer currentEventCustomer;
@@ -86,6 +86,15 @@ public class SuperMarket extends State {
 			queueCount++;
 		}
 		return queueCount;
+	}
+	
+	/*
+	 * Time update 
+	 */
+	public void setTimeState(double newTime){
+		this.time = newTime;
+		super.setTimeState(newTime);
+		return;
 	}
 	
 	/*

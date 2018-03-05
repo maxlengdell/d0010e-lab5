@@ -21,6 +21,7 @@ public class EventClose extends Event {
 		s.updateTimeStatistics(time);
 		s.setEventCustomer(null);
 		s.changeOpenState(false);
+		s.setTimeState(time);
 		s.setEventType(this.getClass());
 		s.notifyStateObs();
 	

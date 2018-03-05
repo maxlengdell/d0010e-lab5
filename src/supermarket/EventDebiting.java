@@ -39,6 +39,7 @@ public class EventDebiting extends Event {
 			s.addCustomerToQueue(c);
 			s.addQueuedCustomer();
 		}
+		s.setTimeState(time);
 		s.setEventCustomer(c);
 		s.setEventType(this.getClass());
 		s.notifyStateObs();
