@@ -14,10 +14,12 @@ public class SuperMarket extends State {
 	double time;
 	
 	// SuperMarket variables
-	private double skill = 0.5;
-	private int maxCustomerAmount=10;
-	private int numberOfCashRegisters = 2;
-	private double timeOpen=8.0;
+	// we put this in RunSim and give to constructor instead thank u.
+
+	private double skill;
+	private int maxCustomerAmount;
+	private int numberOfCashRegisters;
+	private double timeOpen;
 	
 	// SuperMarket statistics
 	private int missedCustomer = 0;
@@ -43,9 +45,14 @@ public class SuperMarket extends State {
 	 */
 	@SuppressWarnings("deprecation")
 /**The constructor for the class SuperMarket. References to time of event. if the store is active or not and the queue that queues the events are made*/
-	public SuperMarket(double time, boolean isActive, EventQueue eventQueue){
+	public SuperMarket(double time, boolean isActive, EventQueue eventQueue,double skill, int max, int cash, double timeopen){
 		super(time, isActive, eventQueue);
 		this.time = time;
+		this.skill=skill;
+		this.maxCustomerAmount=max;
+		this.numberOfCashRegisters=cash;
+		this.timeOpen=timeopen;
+
 	}
 /**This method changes the amount of cash registers for each run of the simulation*/
 	public void changeVariables(int newNumberOfCashRegs) {

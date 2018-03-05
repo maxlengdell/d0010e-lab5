@@ -30,7 +30,7 @@ public class RunSim {
         //Create all objects for the constructors give supermarket EQ and give supermarket to EA
         EventQueue eq = new EventQueue();
         
-        SuperMarket sm = new SuperMarket(0,true,eq);
+        SuperMarket sm = new SuperMarket(0,true,eq,0.5,10,2,8.0);
         SuperMarketView smView = new SuperMarketView(sm);
         
         eq.addEvent(new EventOpen(sm, 0));

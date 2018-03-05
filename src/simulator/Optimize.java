@@ -9,7 +9,7 @@ import supermarket.EventArrival;
 import supermarket.SuperMarket;
 import simulator.State;
 
-
+/*
 public class Optimize {
 	private static SuperMarket supermarket;
 	
@@ -34,3 +34,4 @@ public class Optimize {
 	        cashOpen(EQ,SM);
 	}
 }
+*/
