@@ -62,7 +62,7 @@ public class Optimize {
             EventQueue eq = new EventQueue();
 
             SuperMarket sm = new SuperMarket(0,true,eq, 0.5,max,cash,time);
-            SuperMarketView smView = new SuperMarketView(sm);
+            //SuperMarketView smView = new SuperMarketView(sm);
 
             eq.addEvent(new EventOpen(sm, 0));
             //double time = sm.getRnG().getRnGExponential(); Changed to method in sm and we can change vals from here
