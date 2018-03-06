@@ -28,7 +28,7 @@ public class Optimize {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
 		    //max++;
 		    cash++;
-		    time++;
+		    time = 8;
             System.out.println("\n--------------------------------");
             System.out.print("Maxcust: "+max+"\tCashregs: "+cash+"\tTimeopen: "+time);
 		    //change multiple scenarios

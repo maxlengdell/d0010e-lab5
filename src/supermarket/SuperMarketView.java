@@ -42,6 +42,12 @@ public class SuperMarketView extends View {
 		koar		CurQueue= Number of customers in queue
 		kassako		IdQueue	= The queue of customer with id
 		*/
+		System.out.println("Antal kassor, N............: 2" );
+		System.out.println("Max som ryms, M............: " + s.getmaxCustomerAmount() );
+		System.out.println("Antal kassor, N............: " + s.getLamda());
+		System.out.println("Antal kassor, N............:"+ s.getPlockTid());
+		System.out.println("Antal kassor, N............:"+ s.getPayTime());
+		System.out.println("Antal kassor, N............:"+ s.getSeed());
 		System.out.println("Time\tEvent\t\tId\tOpen?\tFree\tFreeT\tI\t$\tMissed\tTotQ\tQueueT\tCurQ\tIdQueue");
 	}
 
