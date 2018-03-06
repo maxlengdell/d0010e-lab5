@@ -36,6 +36,7 @@ public class Optimize {
 	
 	public static void cashOpen() {
 
+<<<<<<< HEAD
 		for (int i = 0; i < 10; i++) {
 		    //randgen variables
             SEED = 5;
@@ -50,6 +51,13 @@ public class Optimize {
             }
 
 
+=======
+		for (int i = 0; i < 5; i++) {
+		    //dont need ++ can use + 0.5 or whatever is appropriate.
+		    //max++;
+		    cash++;
+		    time = 8;
+>>>>>>> d7849a9f0cfa9a64c67aac37fef05994ff79391f
             System.out.println("\n--------------------------------");
             System.out.print("Maxcust: "+max+"\tCashregs: "+cash+"\tTimeopen: "+time);
 		    //change multiple scenarios

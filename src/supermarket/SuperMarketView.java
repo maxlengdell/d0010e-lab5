@@ -42,6 +42,16 @@ public class SuperMarketView extends View {
 		koar		CurQueue= Number of customers in queue
 		kassako		IdQueue	= The queue of customer with id
 		*/
+		System.out.println("Parametrar:");
+		System.out.println("=============");
+		System.out.println("Antal kassor, N..........: " + s.getcashRegister().length);
+		System.out.println("Max som ryms, M..........: " + s.getmaxCustomerAmount() );
+		System.out.println("Ankomsthastighet, lamda..: " + s.getLamda());
+		System.out.println("Plocktider, [P_min..PMax]:"+ s.getPlockTid());
+		System.out.println("Betaltider, [K_min..Kmax]:"+ s.getPayTime());
+		System.out.println("Frön, f..................:"+ s.getSeed());
+		System.out.println("Förlopp");
+		System.out.println("========");
 		System.out.println("Time\tEvent\t\tId\tOpen?\tFree\tFreeT\tI\t$\tMissed\tTotQ\tQueueT\tCurQ\tIdQueue");
 	}
 
@@ -108,6 +118,7 @@ public class SuperMarketView extends View {
 				System.out.print(", ");
 			}
 		}
+		
 		
 		// TODO: Needs to print the current queue of customers, depends on implementation of FIFO
 	}
