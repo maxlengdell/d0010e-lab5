@@ -5,6 +5,7 @@ package simulator;
 * @author Shahin, Max, Johan, Linus
 *
 */
+import com.sun.org.apache.xpath.internal.SourceTree;
 import random.ExponentialRandomStream;
 import supermarket.EventArrival;
 import supermarket.EventClose;
@@ -28,8 +29,9 @@ public class Optimize {
     private static int lambda;
     private static double uLow;
     private static double uUp;
-    private static int min=0;
-    private static ArrayList<Integer> missedcust = new ArrayList<>();
+    private static int min=9999;
+    private static SuperMarket minobj;
+    private static ArrayList<SuperMarket> missedcust = new ArrayList<>();
 
 
     //gonna test max of 10 and time of 8 and see what minimum amount of cashiers to lost customers is.
@@ -42,7 +44,6 @@ public class Optimize {
 		for (int i = 0; i < 5; i++) {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
 		    //max++;
-		    cash++;
 		    time = 8;
             //randgen variables
             SEED = 5;
@@ -62,7 +63,7 @@ public class Optimize {
             EventQueue eq = new EventQueue();
 
             SuperMarket sm = new SuperMarket(0,true,eq, 0.5,max,cash,time);
-            SuperMarketView smView = new SuperMarketView(sm);
+            //SuperMarketView smView = new SuperMarketView(sm);
 
             eq.addEvent(new EventOpen(sm, 0));
             //double time = sm.getRnG().getRnGExponential(); Changed to method in sm and we can change vals from here
@@ -75,6 +76,7 @@ public class Optimize {
 			 while(sm.getisActive()){
                  //get next event in queue and execute
 		            if (!eq.executeNext()) {
+		                missedcust.add(sm);
                         System.out.println("\nWaited time: "+sm.getwaitedTime());
                         System.out.println("Missed customer: "+sm.getMissedCustomer());
                         System.out.println("Idle cashregTime: "+sm.getFreeCashRegTime()+"\n");
@@ -84,22 +86,21 @@ public class Optimize {
 			//Måste jämföra minsta antalet missade kunder och publicera vilket som är mest lämpligt.
 			// System.out.println(supermarket.amountOfFreeCashRegs());
 		}
+		for(int i=0;i<5;i++){
+		    if(missedcust.get(i).getMissedCustomer()<min){
+		        min = missedcust.get(i).getMissedCustomer();
+		        minobj = missedcust.get(i);
+            }
+        }
+        System.out.println("==========================================");
+        System.out.println("THE MOST EFFICIENT SOLUTION\n");
+        System.out.print("Maxcust: "+minobj.getmaxCustomerAmount()+"\tCashregs: "+minobj.numofcashregs()+"\tTimeopen: "+minobj.getTimeOpen());
+        System.out.println("\nWaited time: "+minobj.getwaitedTime());
+        System.out.println("Missed customer: "+minobj.getMissedCustomer());
+        System.out.println("Idle cashregTime: "+minobj.getFreeCashRegTime()+"\n");
 	}
 
 	public static void main(String[] args) {
-	    /*
-        EventQueue eq = new EventQueue();
-        
-          SuperMarket sm = new SuperMarket(0,true,eq, 0.5,10,2,8.0);
-     //   SuperMarketView smView = new SuperMarketView(sm);
-        
-        eq.addEvent(new EventOpen(sm, 0));
-        double time = sm.getRnG().getRnGExponential();
-        eq.addEvent(new EventArrival(time, sm));
-        eq.addEvent(new EventClose(8, sm));
-        eq.addEvent(new EventStop(999,sm));
-        */
-        //now run eventQueue
         cashOpen();
 	}
 }

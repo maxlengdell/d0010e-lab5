@@ -12,7 +12,10 @@ public class SuperMarket extends State {
 	private boolean isOpen=false;
 	
 	double time;
-	
+
+
+
+
 	// SuperMarket variables
 	// we put this in RunSim and give to constructor instead thank u.
 
@@ -69,6 +72,9 @@ public class SuperMarket extends State {
 		SuperMarketRandomGen rng = new SuperMarketRandomGen(seed,lambda,uLow,uUp);
 		return rng.getRnGExponential();
 
+	}
+	public int numofcashregs(){
+		return numberOfCashRegisters;
 	}
 
 /**This method changes the amount of cash registers for each run of the simulation*/
