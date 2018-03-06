@@ -41,12 +41,12 @@ public class Optimize {
 
 
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 100; i++) {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
 		    //max++;
 		    time = 8;
             //randgen variables
-            SEED = 5;
+            SEED = 5+i;
             //only seed change other stay the same
             lambda=6;
             uLow=0.05;

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bee6cc25-a3e1-454d-860c-3d31b19db49d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bin/supermarket/SuperMarket.class" afterPath="$PROJECT_DIR$/bin/supermarket/SuperMarket.class" />
       <change beforePath="$PROJECT_DIR$/src/simulator/Optimize.java" afterPath="$PROJECT_DIR$/src/simulator/Optimize.java" />
-      <change beforePath="$PROJECT_DIR$/src/supermarket/SuperMarket.java" afterPath="$PROJECT_DIR$/src/supermarket/SuperMarket.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,12 +85,12 @@
       <file leaf-file-name="Optimize.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/simulator/Optimize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="96" column="140" lean-forward="false" selection-start-line="96" selection-start-column="140" selection-end-line="96" selection-end-column="140" />
+            <state relative-caret-position="270">
+              <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3665#3666#0" expanded="true" />
-                <element signature="e#3688#3689#0" expanded="true" />
+                <element signature="e#3669#3670#0" expanded="true" />
+                <element signature="e#3692#3693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -588,8 +585,8 @@
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3665#3666#0" expanded="true" />
-            <element signature="e#3688#3689#0" expanded="true" />
+            <element signature="e#3669#3670#0" expanded="true" />
+            <element signature="e#3692#3693#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1054,12 +1051,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/simulator/Optimize.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="96" column="140" lean-forward="false" selection-start-line="96" selection-start-column="140" selection-end-line="96" selection-end-column="140" />
+        <state relative-caret-position="270">
+          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3665#3666#0" expanded="true" />
-            <element signature="e#3688#3689#0" expanded="true" />
+            <element signature="e#3669#3670#0" expanded="true" />
+            <element signature="e#3692#3693#0" expanded="true" />
           </folding>
         </state>
       </provider>
