@@ -5,7 +5,7 @@ package simulator;
 *
 */
 import supermarket.*;
-/*
+
 
 public class RunSim {
     
@@ -15,7 +15,7 @@ public class RunSim {
 
     //When we get the stop signal we set run to false!
 
-/
+
 
     public static void run(EventQueue eq, SuperMarket S){
         while(S.getisActive()){
@@ -36,6 +36,8 @@ public class RunSim {
         
         eq.addEvent(new EventOpen(sm, 0));
         double time = sm.getRnG().getRnGExponential();
+        //sm.randgen(1234, 1, 0.5, 1.0);
+        
         eq.addEvent(new EventArrival(time, sm));
         eq.addEvent(new EventClose(8, sm));
         eq.addEvent(new EventStop(999,sm));
@@ -60,4 +62,3 @@ public class RunSim {
     }
 
 }
-*/

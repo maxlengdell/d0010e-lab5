@@ -1,3 +1,4 @@
+
 package simulator;
 /**
 *
@@ -84,11 +85,7 @@ public class Optimize {
 			// System.out.println(supermarket.amountOfFreeCashRegs());
 		}
 	}
-	
-//	private static void optimize() {
-//		int temp;
-//		temp = 
-//	}
+
 	public static void main(String[] args) {
 	    /*
         EventQueue eq = new EventQueue();
