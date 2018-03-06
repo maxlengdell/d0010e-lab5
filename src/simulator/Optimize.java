@@ -20,11 +20,13 @@ public class Optimize {
 	private static int cash =1;
 	private static double time;
 
+	
+	
 	public static void cashOpen() {
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
-		    max++;
+		    //max++;
 		    cash++;
 		    time++;
             System.out.println("\n--------------------------------");
