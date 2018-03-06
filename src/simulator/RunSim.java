@@ -5,6 +5,7 @@ package simulator;
 *
 */
 import supermarket.*;
+/*
 
 public class RunSim {
     
@@ -14,7 +15,7 @@ public class RunSim {
 
     //When we get the stop signal we set run to false!
 
-
+/
 
     public static void run(EventQueue eq, SuperMarket S){
         while(S.getisActive()){
@@ -46,3 +47,4 @@ public class RunSim {
     }
 
 }
+*/

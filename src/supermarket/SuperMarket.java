@@ -34,7 +34,7 @@ public class SuperMarket extends State {
 	private int currentCustomerAmount = 0;
 	private int customerIDCount = 0;
 	
-	// Resources
+	// Resources This needs to be a method
 	private SuperMarketRandomGen rng = new SuperMarketRandomGen(42, 6, 0.05, 0.4);
 	
 	// Event tracking
@@ -56,6 +56,21 @@ public class SuperMarket extends State {
 		customerQueue=new Customer[max];
 
 	}
+
+	/**
+	 * This method takes the values for the random generator from the simulator and returns the value
+	 * @param seed
+	 * @param lambda
+	 * @param uLow
+	 * @param uUp
+	 * @return
+	 */
+	public double randgen(int seed, int lambda, double uLow, double uUp){
+		SuperMarketRandomGen rng = new SuperMarketRandomGen(seed,lambda,uLow,uUp);
+		return rng.getRnGExponential();
+
+	}
+
 /**This method changes the amount of cash registers for each run of the simulation*/
 	public void changeVariables(int newNumberOfCashRegs) {
 		cashRegister = new int[newNumberOfCashRegs];
@@ -173,11 +188,13 @@ public class SuperMarket extends State {
 	/**This method updates the time for the waited time variable and the time a cash register has been free (no customer queue)*/
 	public void updateTimeStatistics(double newTime) {
 		waitedTime = waitedTime + (newTime-time)*customerAmountInQueue();
-		int numOfFreeCashRegs = 0;
-		for (int i = 0; i < cashRegister.length; i++) {
-			numOfFreeCashRegs += 1 - cashRegister[i];
+		if(isOpen){
+			int numOfFreeCashRegs = 0;
+			for (int i = 0; i < cashRegister.length; i++) {
+				numOfFreeCashRegs += 1 - cashRegister[i];
+			}
+			freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
 		}
-		freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
 	}
 	//Cash register stuff
 	/**This method checks if any cash registers are free*/
