@@ -42,12 +42,16 @@ public class SuperMarketView extends View {
 		koar		CurQueue= Number of customers in queue
 		kassako		IdQueue	= The queue of customer with id
 		*/
-		System.out.println("Antal kassor, N............: 2" );
-		System.out.println("Max som ryms, M............: " + s.getmaxCustomerAmount() );
-		System.out.println("Antal kassor, N............: " + s.getLamda());
-		System.out.println("Antal kassor, N............:"+ s.getPlockTid());
-		System.out.println("Antal kassor, N............:"+ s.getPayTime());
-		System.out.println("Antal kassor, N............:"+ s.getSeed());
+		System.out.println("Parametrar:");
+		System.out.println("=============");
+		System.out.println("Antal kassor, N..........: " + s.getcashRegister().length);
+		System.out.println("Max som ryms, M..........: " + s.getmaxCustomerAmount() );
+		System.out.println("Ankomsthastighet, lamda..: " + s.getLamda());
+		System.out.println("Plocktider, [P_min..PMax]:"+ s.getPlockTid());
+		System.out.println("Betaltider, [K_min..Kmax]:"+ s.getPayTime());
+		System.out.println("Frön, f..................:"+ s.getSeed());
+		System.out.println("Förlopp");
+		System.out.println("========");
 		System.out.println("Time\tEvent\t\tId\tOpen?\tFree\tFreeT\tI\t$\tMissed\tTotQ\tQueueT\tCurQ\tIdQueue");
 	}
 
@@ -114,6 +118,16 @@ public class SuperMarketView extends View {
 				System.out.print(", ");
 			}
 		}
+		System.out.println("Resultat");
+		System.out.println("=============");
+		
+		System.out.println("1); Av "+s.getmaxCustomerAmount()+" kuser handlade " + s.getDebitedCustomer()+" medans "+ s.getMissedCustomer()+" missades.");
+		
+		System.out.println("2); Total tid " + s.getcashRegister().length + " kassor varit lediga: " + s.getFreeCashRegTime() + ".\nGenomsnittlig ledig kassatid: "
+		+(s.getFreeCashRegTime()/s.getTimeOpen())*100+"te (dvs "+ s.getFreeCashRegTime()/s.getTimeOpen() + "% av tiden från öppning tills sista kunden betalat).");
+		
+		System.out.println("3); Total tid " + s.getQueuedCustomer() + " kunder tvingats köa: " + s.getwaitedTime() 
+		+ ".\nGenomsnittlig kötid: " + s.getwaitedTime()/s.getQueuedCustomer()+ "te.");
 		
 		// TODO: Needs to print the current queue of customers, depends on implementation of FIFO
 	}
