@@ -290,9 +290,25 @@ public class SuperMarket extends State {
 		return this.freeCashRegTime;
 		
 	}
-	
-	
-	
+
+	public double getLamda() {
+		return rng.lambda;
+	}
+	public double getPlockTidUpper() {
+		return rng.uniUpper*2;	
+	}
+	public double getPlockTidLower() {
+		return rng.uniLower*2;
+	}
+	public double getPayTimeUpper() {
+		return rng.uniUpper;
+	}
+	public double getPayTimeLower() {
+		return rng.uniLower;
+	}
+	public long getSeed() {
+		return rng.seed;
+	}
 	
 	
 

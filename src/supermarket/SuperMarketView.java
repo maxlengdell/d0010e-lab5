@@ -47,8 +47,8 @@ public class SuperMarketView extends View {
 		System.out.println("Antal kassor, N..........: " + s.getcashRegister().length);
 		System.out.println("Max som ryms, M..........: " + s.getmaxCustomerAmount() );
 		System.out.println("Ankomsthastighet, lamda..: " + s.getLamda());
-		System.out.println("Plocktider, [P_min..PMax]:"+ s.getPlockTid());
-		System.out.println("Betaltider, [K_min..Kmax]:"+ s.getPayTime());
+		System.out.println("Plocktider, [P_min..PMax]:"+ s.getPlockTidLower()+"..."+s.getPlockTidUpper());
+		System.out.println("Betaltider, [K_min..Kmax]:"+ s.getPayTimeLower()+"..."+s.getPayTimeUpper());
 		System.out.println("Frön, f..................:"+ s.getSeed());
 		System.out.println("Förlopp");
 		System.out.println("========");
