@@ -35,7 +35,7 @@ public class Optimize {
 	
 	
 	public static void cashOpen() {
-	    
+
 
 
 		for (int i = 0; i < 5; i++) {
@@ -76,7 +76,7 @@ public class Optimize {
 		            if (!eq.executeNext()) {
                         System.out.println("\nWaited time: "+sm.getwaitedTime());
                         System.out.println("Missed customer: "+sm.getMissedCustomer());
-                        System.out.println("Idle cashregTime: "+sm.getFreeCashRegTime());
+                        System.out.println("Idle cashregTime: "+sm.getFreeCashRegTime()+"\n");
 		            	break;
 		            }
 		        }
