@@ -118,16 +118,7 @@ public class SuperMarketView extends View {
 				System.out.print(", ");
 			}
 		}
-		System.out.println("Resultat");
-		System.out.println("=============");
 		
-		System.out.println("1); Av "+s.getmaxCustomerAmount()+" kuser handlade " + s.getDebitedCustomer()+" medans "+ s.getMissedCustomer()+" missades.");
-		
-		System.out.println("2); Total tid " + s.getcashRegister().length + " kassor varit lediga: " + s.getFreeCashRegTime() + ".\nGenomsnittlig ledig kassatid: "
-		+(s.getFreeCashRegTime()/s.getTimeOpen())*100+"te (dvs "+ s.getFreeCashRegTime()/s.getTimeOpen() + "% av tiden från öppning tills sista kunden betalat).");
-		
-		System.out.println("3); Total tid " + s.getQueuedCustomer() + " kunder tvingats köa: " + s.getwaitedTime() 
-		+ ".\nGenomsnittlig kötid: " + s.getwaitedTime()/s.getQueuedCustomer()+ "te.");
 		
 		// TODO: Needs to print the current queue of customers, depends on implementation of FIFO
 	}

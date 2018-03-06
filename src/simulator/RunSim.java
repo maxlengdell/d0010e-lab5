@@ -41,6 +41,19 @@ public class RunSim {
         
         //now run eventQueue
         run(eq,sm);
+        System.out.println("Resultat");
+		System.out.println("=============");
+		
+		System.out.print("1); Av "+sm.getmaxCustomerAmount()+" kuser handlade " + sm.getDebitedCustomer()+" medans "+ sm.getMissedCustomer()+" missades.\n");
+		
+		System.out.print("\n2); Total tid " + sm.getcashRegister().length + " kassor varit lediga: " + sm.getFreeCashRegTime() + ". \nGenomsnittlig ledig kassatid: ");
+		System.out.printf("%.2f",(sm.getFreeCashRegTime()/sm.getTimeOpen())*100);
+		System.out.print(" te (dvs ");
+		System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getTimeOpen());
+		System.out.print("% av tiden från öppning tills sista kunden betalat).\n");
+		
+		System.out.println("\n3); Total tid " + sm.getQueuedCustomer() + " kunder tvingats köa: " + sm.getwaitedTime() 
+		+ ".\nGenomsnittlig kötid: " + sm.getwaitedTime()/sm.getQueuedCustomer()+ "te.");
 
 
     }
