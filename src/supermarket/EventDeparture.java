@@ -38,6 +38,7 @@ public class EventDeparture extends Event {
 			s.freeCashRegister();
 		}			
 		s.setTimeState(time);
+		s.setLastCustomerDeparture(time);
 		s.setEventType(this.getClass());
 		s.setEventCustomer(customer);
 		s.notifyStateObs();

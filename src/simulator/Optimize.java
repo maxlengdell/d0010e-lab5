@@ -32,7 +32,7 @@ public class Optimize {
     private static double uLowDeparture;
     private static double uUpDeparture;
     private static int min=9999;
-    private static int simulations=10;
+    private static int simulations=100;
     private static SuperMarket minobj;
     private static ArrayList<SuperMarket> missedcust = new ArrayList<>();
 
@@ -50,10 +50,10 @@ public class Optimize {
 			max = 5;
 			lambda= 1;
 		    uLowDebiting=0.5;
-            uUpDebiting=1;
+            uUpDebiting=1.0;
             uLowDeparture=2.0;
             uUpDeparture=3.0;
-            SEED = 1234;
+            SEED = 1234+i;
             time = 10;
 		    //only seed change other stay the same
             
@@ -68,7 +68,7 @@ public class Optimize {
 		    //change multiple scenarios
             EventQueue eq = new EventQueue();
 
-            SuperMarket sm = new SuperMarket(0,true,eq, 0.5,max,cash,time);
+            SuperMarket sm = new SuperMarket(0,true,eq, 1,max,cash,time);
             sm.initRandGen(SEED,lambda,uLowDebiting,uUpDebiting,uLowDeparture,uUpDeparture);
             //SuperMarketView smView = new SuperMarketView(sm);
 

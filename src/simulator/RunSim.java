@@ -38,8 +38,8 @@ public class RunSim {
         EventQueue eq = new EventQueue();
         
         // SuperMarket(double time, boolean isActive, EventQueue eventQueue, double skill, int max, int cash, double timeopen)
-        SuperMarket sm = new SuperMarket(0,true,eq, 1,5,2,10);
-        sm.initRandGen(1234,1,0.5,1,2,3);
+        SuperMarket sm = new SuperMarket(0,true,eq, 1,7,2,8);
+        sm.initRandGen(13,3,0.6,0.9,0.35,0.6);
         SuperMarketView smView = new SuperMarketView(sm);
         
         eq.addEvent(new EventOpen(sm, 0));
@@ -47,7 +47,7 @@ public class RunSim {
         //sm.randgen(1234, 1, 0.5, 1.0);
         
         eq.addEvent(new EventArrival(time, sm));
-        eq.addEvent(new EventClose(10, sm));
+        eq.addEvent(new EventClose(8, sm));
         eq.addEvent(new EventStop(999,sm));
         
         //now run eventQueue
@@ -62,7 +62,7 @@ public class RunSim {
 		System.out.print(". \nGenomsnittlig ledig kassatid: ");
 		System.out.printf("%.2f",(sm.getFreeCashRegTime()/sm.getcashRegister().length));
 		System.out.print(" te (dvs ");
-		System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getcashRegister().length/sm.getTimeOpen()*100);
+		System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getcashRegister().length/sm.getLastCustomerDeparture()*100);
 		System.out.print("% av tiden från öppning tills sista kunden betalat).\n");
 		
 		System.out.print("\n3); Total tid " + sm.getQueuedCustomer() + " kunder tvingats köa: ");

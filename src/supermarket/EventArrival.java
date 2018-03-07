@@ -31,7 +31,10 @@ public class EventArrival extends Event {
 	 */
 	public void execute() {
 		Customer customer = new Customer(s.nextCustomerId(), s.getTimeState());
-		s.updateTimeStatistics(time);
+		if (s.getisOpen() || s.getcurrentCustomerAmount()>0) {
+			s.updateTimeStatistics(time);
+		}
+		
 		
 		if (s.getisOpen()) {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {

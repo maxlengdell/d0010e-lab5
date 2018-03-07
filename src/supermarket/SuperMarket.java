@@ -29,6 +29,7 @@ public class SuperMarket extends State {
 	private int queuedCustomer = 0;
 	private double waitedTime = 0; 
 	private double freeCashRegTime = 0;
+	private double lastCustomerDeparture = 0;
 	
 	// Current State data
 	private int[] cashRegister = new int[numberOfCashRegisters]; // 0 for vacant, 1 for occupied cashregister
@@ -259,13 +260,11 @@ public class SuperMarket extends State {
 	 */
 	public void updateTimeStatistics(double newTime) {
 		waitedTime = waitedTime + (newTime-time)*customerAmountInQueue();
-		if(isOpen){
-			int numOfFreeCashRegs = 0;
-			for (int i = 0; i < cashRegister.length; i++) {
-				numOfFreeCashRegs += 1 - cashRegister[i];
-			}
-			freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
+		int numOfFreeCashRegs = 0;
+		for (int i = 0; i < cashRegister.length; i++) {
+			numOfFreeCashRegs += 1 - cashRegister[i];
 		}
+		freeCashRegTime = freeCashRegTime + (newTime-time)*numOfFreeCashRegs;
 	}
 	//Cash register stuff
 	/**This method checks if any cash registers are free
@@ -444,6 +443,13 @@ public class SuperMarket extends State {
 		return rng.seed;
 	}
 	
+	public double getLastCustomerDeparture() {
+		return lastCustomerDeparture;
+	}
+	public void setLastCustomerDeparture(double time) {
+		lastCustomerDeparture = time;
+		return;
+	}
 	
 
 }
