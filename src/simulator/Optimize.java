@@ -30,6 +30,7 @@ public class Optimize {
     private static double uLow;
     private static double uUp;
     private static int min=9999;
+    private static int simulations=10;
     private static SuperMarket minobj;
     private static ArrayList<SuperMarket> missedcust = new ArrayList<>();
 
@@ -41,12 +42,12 @@ public class Optimize {
 
 
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < simulations; i++) {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
 		    //max++;
 		    time = 8;
             //randgen variables
-            SEED = 5+i;
+            SEED = 5;
             //only seed change other stay the same
             lambda=6;
             uLow=0.05;
@@ -76,6 +77,7 @@ public class Optimize {
 			 while(sm.getisActive()){
                  //get next event in queue and execute
 		            if (!eq.executeNext()) {
+		                //add all objs to list
 		                missedcust.add(sm);
                         System.out.println("\nWaited time: "+sm.getwaitedTime());
                         System.out.println("Missed customer: "+sm.getMissedCustomer());
@@ -86,7 +88,8 @@ public class Optimize {
 			//Måste jämföra minsta antalet missade kunder och publicera vilket som är mest lämpligt.
 			// System.out.println(supermarket.amountOfFreeCashRegs());
 		}
-		for(int i=0;i<5;i++){
+		//loop through amount of simulations and get the sim with least missed
+		for(int i=0;i<simulations;i++){
 		    if(missedcust.get(i).getMissedCustomer()<min){
 		        min = missedcust.get(i).getMissedCustomer();
 		        minobj = missedcust.get(i);
