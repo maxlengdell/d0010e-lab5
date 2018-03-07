@@ -9,8 +9,7 @@ public abstract class Event {
 	
 	private double time;
 	private State state;
-	/**Constructor for the class Event. A time of event and a state of event is assigned when a event object is created*/
-	/**
+	/**Constructor for the class Event. A time of event and a state of event is assigned when a event object is created
 	 * 
 	 * @param time
 	 * @param state
@@ -20,19 +19,19 @@ public abstract class Event {
 		this.time = time; //Sort the events by time.
 		this.state = state;
 	}
-	/**This method returns the time*/
-	/**
+	/**This method returns the time
 	 * 
 	 * @return
 	 */
+	
 	public double getTime() {
 		return time;
 	}
-	/**This method returns the state/what kind of event it is*/
-	/**
+	/**This method returns the state/what kind of event it is
 	 * 
 	 * @return
 	 */
+	
 	public State getState() {
 		return state;
 	}
