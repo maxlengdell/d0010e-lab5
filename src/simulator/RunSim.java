@@ -16,7 +16,11 @@ public class RunSim {
     //When we get the stop signal we set run to false!
 
 
-
+/**
+ * Executes the next event if there exist such a event. 
+ * @param eq
+ * @param S
+ */
     public static void run(EventQueue eq, SuperMarket S){
         while(S.getisActive()){
             //get next event in queue and execute

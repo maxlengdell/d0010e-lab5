@@ -11,12 +11,19 @@ public class EventQueue {
 
 	
 	public ArrayList <Event> eventList = new ArrayList<Event>();
-
+/**
+ * adds the parameter to parseEvent method and sorts them according to scheuled time
+ * @param event
+ */
 	public void addEvent(Event event){
 		parseEvents(event.getTime(), event);
 		
 
 	}
+	/**
+	 * Executes next event if there exists such a event. 
+	 * @return
+	 */
 	public boolean executeNext(){
 		if (eventList.size() > 0) {
 			Event first = eventList.get(0);
@@ -30,14 +37,27 @@ public class EventQueue {
 		
 
 	}
+	/**
+	 * Returns the eventList
+	 * @return
+	 */
 	public ArrayList<Event> getEventList () {
 		return eventList;
 	}
+	/**
+	 * returns the first event in the eventList(eventQueue)
+	 * @return
+	 */
 	public Event getFirstEvent() {
 		Event first = eventList.get(0);
 		
 		return first;
 	}
+	/**
+	 * Sorts the events in eventList to the correct scheduled scheme. 
+	 * @param scheduledTime
+	 * @param event
+	 */
 	public void parseEvents(double scheduledTime, Event event) { 
 		//Adds event to eventList in order based on scheduled time. 
 		
