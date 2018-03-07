@@ -31,7 +31,9 @@ public class RunSim {
         //Create all objects for the constructors give supermarket EQ and give supermarket to EA
         EventQueue eq = new EventQueue();
         
-        SuperMarket sm = new SuperMarket(0,true,eq, 0.5,10,2,8.0);
+        // SuperMarket(double time, boolean isActive, EventQueue eventQueue, double skill, int max, int cash, double timeopen)
+        SuperMarket sm = new SuperMarket(0,true,eq, 1,5,2,10);
+        sm.initRandGen(1234,1,0.5,1,2,3);
         SuperMarketView smView = new SuperMarketView(sm);
         
         eq.addEvent(new EventOpen(sm, 0));
@@ -39,7 +41,7 @@ public class RunSim {
         //sm.randgen(1234, 1, 0.5, 1.0);
         
         eq.addEvent(new EventArrival(time, sm));
-        eq.addEvent(new EventClose(8, sm));
+        eq.addEvent(new EventClose(10, sm));
         eq.addEvent(new EventStop(999,sm));
         
         //now run eventQueue
@@ -47,7 +49,7 @@ public class RunSim {
         System.out.println("Resultat");
 		System.out.println("=============");
 		
-		System.out.print("1); Av "+sm.getmaxCustomerAmount()+" kuser handlade " + sm.getDebitedCustomer()+" medans "+ sm.getMissedCustomer()+" missades.\n");
+		System.out.print("1); Av "+(sm.getcustomerIDCount()-1)+" kunder handlade " + sm.getDebitedCustomer()+" medans "+ sm.getMissedCustomer()+" missades.\n");
 		
 		System.out.print("\n2); Total tid " + sm.getcashRegister().length + " kassor varit lediga: " + sm.getFreeCashRegTime() + ". \nGenomsnittlig ledig kassatid: ");
 		System.out.printf("%.2f",(sm.getFreeCashRegTime()/sm.getTimeOpen())*100);

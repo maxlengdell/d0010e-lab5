@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class Optimize {
 	private static SuperMarket supermarket;
-	private static int max =10;
+	private static int max;
 	private static int cash =1;
 	private static double time=8.0;
     //randomgen variables
@@ -47,15 +47,16 @@ public class Optimize {
 		for (int i = 0; i < simulations; i++) {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
 		    //max++;
-		    time = 10;
-            //randgen variables
-            SEED = 1234;
-            //only seed change other stay the same
-            lambda=1;
-            uLowDebiting=0.5;
+			max = 5;
+			lambda= 1;
+		    uLowDebiting=0.5;
             uUpDebiting=1;
             uLowDeparture=2.0;
             uUpDeparture=3.0;
+            SEED = 1234;
+            time = 10;
+		    //only seed change other stay the same
+            
             //add cashiers to max
 
             if(cash<max-1){
