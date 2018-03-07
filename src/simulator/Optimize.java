@@ -5,7 +5,7 @@ package simulator;
 * @author Shahin, Max, Johan, Linus
 *
 */
-import com.sun.org.apache.xpath.internal.SourceTree;
+
 import random.ExponentialRandomStream;
 import supermarket.EventArrival;
 import supermarket.EventClose;
