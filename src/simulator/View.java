@@ -7,6 +7,11 @@ import java.util.Observable;
 */
 import java.util.Observer;
 
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
 @SuppressWarnings("deprecation")
 public class View implements Observer {
 	

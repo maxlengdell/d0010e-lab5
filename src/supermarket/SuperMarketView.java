@@ -10,7 +10,11 @@ import java.util.Observable;
 
 
 import simulator.*;
-
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
 public class SuperMarketView extends View {
 	
 	SuperMarket s;
