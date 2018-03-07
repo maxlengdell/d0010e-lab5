@@ -6,7 +6,7 @@ package simulator;
 */
 import supermarket.*;
 
-
+/*
 public class RunSim {
     
 //    So basically we get a generated time from the randomgen. This value is going to be passed to the respective event.
@@ -62,3 +62,5 @@ public class RunSim {
     }
 
 }
+
+*/

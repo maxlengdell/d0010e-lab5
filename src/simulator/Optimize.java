@@ -37,7 +37,53 @@ public class Optimize {
 
     //gonna test max of 10 and time of 8 and see what minimum amount of cashiers to lost customers is.
 	
-	
+
+
+    public static void firstmethod(int cashregs){
+
+        EventQueue eq = new EventQueue();
+        SuperMarket sm = new SuperMarket(0,true,eq, 0.5,max,cashregs,time);
+
+
+        SuperMarketView smView = new SuperMarketView(sm);
+        eq.addEvent(new EventOpen(sm, 0));
+        //double time = sm.getRnG().getRnGExponential(); Changed to method in sm and we can change vals from here
+        //give wanted values for simulation
+        sm.randgen(SEED,lambda,uLow,uUp);
+        eq.addEvent(new EventArrival(0, sm));
+        eq.addEvent(new EventClose(8, sm));
+        eq.addEvent(new EventStop(999,sm));
+        while(sm.getisActive()){
+            //get next event in queue and execute
+            if (!eq.executeNext()) {
+                break;
+            }
+        }
+        System.out.println("Resultat");
+        System.out.println("=============");
+
+        System.out.print("1); Av "+sm.getmaxCustomerAmount()+" kuser handlade " + sm.getDebitedCustomer()+" medans "+ sm.getMissedCustomer()+" missades.\n");
+
+        System.out.print("\n2); Total tid " + sm.getcashRegister().length + " kassor varit lediga: " + sm.getFreeCashRegTime() + ". \nGenomsnittlig ledig kassatid: ");
+        System.out.printf("%.2f",(sm.getFreeCashRegTime()/sm.getTimeOpen())*100);
+        System.out.print(" te (dvs ");
+        System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getTimeOpen());
+        System.out.print("% av tiden från öppning tills sista kunden betalat).\n");
+
+        System.out.println("\n3); Total tid " + sm.getQueuedCustomer() + " kunder tvingats köa: " + sm.getwaitedTime()
+                + ".\nGenomsnittlig kötid: " + sm.getwaitedTime()/sm.getQueuedCustomer()+ "te.");
+    }
+
+    public static void scndMethod(){
+        //my duty is to send cashregs to method1
+        //maybe i set max and skill and all that?
+        //while i is less then max cust send more cash regs
+        for (int i=1;i<max;i++){
+            firstmethod(i);
+        }
+    }
+
+
 	public static void cashOpen() {
 
 
@@ -104,6 +150,8 @@ public class Optimize {
 	}
 
 	public static void main(String[] args) {
-        cashOpen();
+        //cashOpen();
+        // doing the methods of lab spec 2.0
+        firstmethod(2);
 	}
 }
