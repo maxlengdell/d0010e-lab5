@@ -1,7 +1,7 @@
 package supermarket;
 
 import random.*;
-
+/**This class creates a random run every time the program is runned*/
 public class SuperMarketRandomGen {
 	
 	// Arrival = exp
@@ -9,14 +9,20 @@ public class SuperMarketRandomGen {
 	// Lambda = 4
 	// uni 0.05 = 0.25
 	
-	private ExponentialRandomStream expRS;
-	private UniformRandomStream uniRSDeparture;
-	private UniformRandomStream uniRSDebiting;
-	public double lambda;
+	private ExponentialRandomStream expRS; //Object that generates exponential random numbers
+	private UniformRandomStream uniRSDeparture; //Object that generates uniform random numbers.
+	private UniformRandomStream uniRSDebiting; //Object that genereates uniform random numbers.
+	/**Describes the shape of the distribution curve*/
+	public double lambda; 
+	/**Random start value that initializes the random generator*/
 	public long seed;
+	/**Random uniform low value for when a depart event occurs*/
 	public double uniLowerDeparture;
+	/**Random uniform high value for when a depart event occurs*/
 	public double uniUpperDeparture;
+	/**Random uniform low value for when a debiting event occurs*/
 	public double uniLowerDebiting;
+	/**Random uniform high value for when a debiting event occurs*/
 	public double uniUpperDebiting;
 	/**
 	 * Generates a random number with the following parameters.
@@ -27,7 +33,6 @@ public class SuperMarketRandomGen {
 	 * @param uniLowerDeparture
 	 * @param uniUpperDeparture
 	 */
-	
 	public SuperMarketRandomGen(long seed, double expLambda, double uniLowerDebiting, double uniUpperDebiting, double uniLowerDeparture, double uniUpperDeparture) {
 		lambda = expLambda;
 		this.seed = seed;
