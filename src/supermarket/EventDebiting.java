@@ -1,12 +1,13 @@
 package supermarket;
-/**
-*
-* @author Shahin, Max, Johan, Linus
-*
-*/
+
 import simulator.Event;
 import simulator.State;
 import supermarket.SuperMarket;
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
 /** This class describes the event the occurs when a customer goes to the cash register and starts paying */
 public class EventDebiting extends Event {
 	double time;

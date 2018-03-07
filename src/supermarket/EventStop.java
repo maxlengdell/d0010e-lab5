@@ -1,10 +1,10 @@
 package supermarket;
+import simulator.Event;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
-import simulator.Event;
 /** This class describes the event that occurs when the supermarket simulation stops/ends*/
 public class EventStop extends Event {
 	SuperMarket s;

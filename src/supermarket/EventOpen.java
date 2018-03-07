@@ -1,11 +1,12 @@
 package supermarket;
-/**
-*
-* @author Shahin, Max, Johan, Linus
-*
-*/
+
 import simulator.Event;
 import supermarket.SuperMarket;
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
 /** This class describes the event that occurs when the simulation begins/the supermarket opens. */
 public class EventOpen extends Event {
 	double time;

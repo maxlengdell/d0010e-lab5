@@ -1,10 +1,12 @@
 package supermarket;
+
+import simulator.Event;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+* @author Shahin Salehi, Max Lengdell, Johan Jirlén, Linus
+* Lindahl Marjavaara
 *
 */
-import simulator.Event;
 /**This class decribes the event that ouccurs when the supermarket closes*/
 public class EventClose extends Event {
 	SuperMarket s;
