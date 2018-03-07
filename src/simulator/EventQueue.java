@@ -1,15 +1,16 @@
 package simulator;
+
+import java.util.ArrayList;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
-import java.util.ArrayList;
-//import simulator.Event;
-
+/**This class describes the queue of events that occur in a simulation*/
 public class EventQueue {
 
-	
+
+	/**ArrayList that lists the events*/
 	public ArrayList <Event> eventList = new ArrayList<Event>();
 /**
  * adds the parameter to parseEvent method and sorts them according to scheuled time
