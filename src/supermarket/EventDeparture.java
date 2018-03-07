@@ -2,6 +2,11 @@ package supermarket;
 
 import simulator.*;
 /**This class describes the event that occurs when a customer is leaving the store*/
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
 public class EventDeparture extends Event {
 
 	double time;
