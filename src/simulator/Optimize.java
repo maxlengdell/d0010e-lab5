@@ -2,7 +2,7 @@
 package simulator;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+** @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
 

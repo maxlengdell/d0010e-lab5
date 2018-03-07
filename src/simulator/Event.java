@@ -1,7 +1,7 @@
 package simulator;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
 
@@ -35,7 +35,10 @@ public abstract class Event {
 	public State getState() {
 		return state;
 	}
-	/**This method runs an event*/
+	/**
+	 * This method runs an event
+	 * 
+	 */
 	public void execute() {
 		
 	}
