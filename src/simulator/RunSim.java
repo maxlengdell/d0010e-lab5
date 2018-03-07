@@ -51,10 +51,12 @@ public class RunSim {
 		
 		System.out.print("1); Av "+(sm.getcustomerIDCount()-1)+" kunder handlade " + sm.getDebitedCustomer()+" medans "+ sm.getMissedCustomer()+" missades.\n");
 		
-		System.out.print("\n2); Total tid " + sm.getcashRegister().length + " kassor varit lediga: " + sm.getFreeCashRegTime() + ". \nGenomsnittlig ledig kassatid: ");
-		System.out.printf("%.2f",(sm.getFreeCashRegTime()/sm.getTimeOpen())*100);
+		System.out.print("\n2); Total tid " + sm.getcashRegister().length + " kassor varit lediga: ");
+		System.out.printf("%.2f",sm.getFreeCashRegTime());
+		System.out.print(". \nGenomsnittlig ledig kassatid: ");
+		System.out.printf("%.2f",(sm.getFreeCashRegTime()/sm.getcashRegister().length));
 		System.out.print(" te (dvs ");
-		System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getTimeOpen());
+		System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getcashRegister().length/sm.getTimeOpen()*100);
 		System.out.print("% av tiden från öppning tills sista kunden betalat).\n");
 		
 		System.out.println("\n3); Total tid " + sm.getQueuedCustomer() + " kunder tvingats köa: " + sm.getwaitedTime() 
