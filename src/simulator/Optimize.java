@@ -85,9 +85,11 @@ public class Optimize {
 		            if (!eq.executeNext()) {
 		                //add all objs to list
 		                missedcust.add(sm);
-                        System.out.println("\nWaited time: "+sm.getwaitedTime());
-                        System.out.println("Missed customer: "+sm.getMissedCustomer());
-                        System.out.println("Idle cashregTime: "+sm.getFreeCashRegTime()+"\n");
+                        System.out.print("\nWaited time: ");
+                        System.out.printf("%.2f", sm.getwaitedTime());
+                        System.out.println("\nMissed customer: "+sm.getMissedCustomer());
+                        System.out.print("Idle cashregTime: ");
+                        System.out.printf("%.2f", sm.getFreeCashRegTime());
 		            	break;
 		            }
 		        }
@@ -101,12 +103,14 @@ public class Optimize {
 		        minobj = missedcust.get(i);
             }
         }
-        System.out.println("==========================================");
+        System.out.println("\n==========================================");
         System.out.println("THE MOST EFFICIENT SOLUTION\n");
         System.out.print("Maxcust: "+minobj.getmaxCustomerAmount()+"\tCashregs: "+minobj.numofcashregs()+"\tTimeopen: "+minobj.getTimeOpen());
-        System.out.println("\nWaited time: "+minobj.getwaitedTime());
-        System.out.println("Missed customer: "+minobj.getMissedCustomer());
-        System.out.println("Idle cashregTime: "+minobj.getFreeCashRegTime()+"\n");
+        System.out.print("\nWaited time: ");
+        System.out.printf("%.2f", minobj.getwaitedTime());
+        System.out.println("\nMissed customer: "+minobj.getMissedCustomer());
+        System.out.print("Idle cashregTime: ");
+        System.out.printf("%.2f", minobj.getFreeCashRegTime());
 	}
 
 	public static void main(String[] args) {
