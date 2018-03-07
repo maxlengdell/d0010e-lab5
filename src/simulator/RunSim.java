@@ -59,8 +59,11 @@ public class RunSim {
 		System.out.printf("%.2f",sm.getFreeCashRegTime()/sm.getcashRegister().length/sm.getTimeOpen()*100);
 		System.out.print("% av tiden från öppning tills sista kunden betalat).\n");
 		
-		System.out.println("\n3); Total tid " + sm.getQueuedCustomer() + " kunder tvingats köa: " + sm.getwaitedTime() 
-		+ ".\nGenomsnittlig kötid: " + sm.getwaitedTime()/sm.getQueuedCustomer()+ "te.");
+		System.out.print("\n3); Total tid " + sm.getQueuedCustomer() + " kunder tvingats köa: ");
+		System.out.printf("%.2f",  sm.getwaitedTime());
+		System.out.print(".\nGenomsnittlig kötid: ");
+		System.out.printf("%.2f",sm.getwaitedTime()/sm.getQueuedCustomer());
+		System.out.print(" te.");
 
 
     }
