@@ -18,7 +18,15 @@ public class SuperMarketRandomGen {
 	public double uniUpperDeparture;
 	public double uniLowerDebiting;
 	public double uniUpperDebiting;
-	
+	/**
+	 * Generates a random number with the following parameters.
+	 * @param seed
+	 * @param expLambda
+	 * @param uniLowerDebiting
+	 * @param uniUpperDebiting
+	 * @param uniLowerDeparture
+	 * @param uniUpperDeparture
+	 */
 	
 	public SuperMarketRandomGen(long seed, double expLambda, double uniLowerDebiting, double uniUpperDebiting, double uniLowerDeparture, double uniUpperDeparture) {
 		lambda = expLambda;
@@ -32,15 +40,26 @@ public class SuperMarketRandomGen {
 		uniRSDebiting = new UniformRandomStream(uniLowerDebiting, uniUpperDebiting, seed);
 	}
 	
-		
+		/**
+		 * returns the a new departure RnG number
+		 * @return
+		 */
 	public double getRnGUniformDeparture(){
 		return uniRSDeparture.next();
 		
 	}
+	/**
+	 * returns a new debiting RnG number
+	 * @return
+	 */
 	public double getRnGUniformDebiting(){
 		return uniRSDebiting.next();
 		
 	}
+	/**
+	 * returns a new exponential RnG number.
+	 * @return
+	 */
 	public double getRnGExponential(){
 		return expRS.next();
 	}

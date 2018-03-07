@@ -47,7 +47,17 @@ public class SuperMarket extends State {
 	 * Constructor
 	 */
 	@SuppressWarnings("deprecation")
-/**The constructor for the class SuperMarket. References to time of event. if the store is active or not and the queue that queues the events are made*/
+/**The constructor for the class SuperMarket. References to time of event. if the store is active or not and the queue that queues the events are made
+	
+	 * 
+	 * @param time
+	 * @param isActive
+	 * @param eventQueue
+	 * @param skill
+	 * @param max
+	 * @param cash
+	 * @param timeopen
+	 */
 	public SuperMarket(double time, boolean isActive, EventQueue eventQueue, double skill, int max, int cash, double timeopen){
 		super(time, isActive, eventQueue);
 		this.time = time;
@@ -73,21 +83,34 @@ public class SuperMarket extends State {
 		return;
 
 	}
+	/**
+	 * returns number of cash registers. 
+	 * @return
+	 */
 	public int numofcashregs(){
 		return numberOfCashRegisters;
 	}
 
-/**This method changes the amount of cash registers for each run of the simulation*/
+/**This method changes the amount of cash registers for each run of the simulation
+	
+	 * 
+	 * @param newNumberOfCashRegs
+	 */
 	public void changeVariables(int newNumberOfCashRegs) {
 		cashRegister = new int[newNumberOfCashRegs];
 	}
 //Customer stuff	
-/**This method returns the queue of customers/ cash register queue*/
-	
+/**This method returns the queue of customers/ cash register queue
+ * 
+ * @return
+ */
 	public Customer[] getCustomerQueue() {
 		return customerQueue;
 	}
-/**This method removes the first customer from the customer queue/cash register queue after the customer has finished paying*/
+/**This method removes the first customer from the customer queue/cash register queue after the customer has finished paying
+ * 
+ * @return
+ */
 	public Customer takeFirstCustomerFromQueue() {
 		Customer firstCustomer = customerQueue[0];
 		for (int i = 1; i < customerQueue.length; i++) {
@@ -96,7 +119,10 @@ public class SuperMarket extends State {
 		customerQueue[customerQueue.length-1] = null;
 		return firstCustomer;
 	}
-/**This method adds a customer to the customer queue/cash register queue*/
+/**This method adds a customer to the customer queue/cash register queue
+ * 
+ * @param newCustomer
+ */
 	public void addCustomerToQueue(Customer newCustomer) {
 		for (int i = 0; i < customerQueue.length; i++) {
 			if (customerQueue[i] == null) {
@@ -106,7 +132,10 @@ public class SuperMarket extends State {
 		}
 		return;
 	}
-/**>This method counts the amount of customers in the customer queue/cash register queue*/
+/**>This method counts the amount of customers in the customer queue/cash register queue
+ * 
+ * @return
+ */
 	public int customerAmountInQueue() {
 		int queueCount = 0;
 		for (int i = 0; i < customerQueue.length; i++) {
@@ -117,81 +146,118 @@ public class SuperMarket extends State {
 		}
 		return queueCount;
 	}
-	/**This method updates the time for every ovent that occurs*/
+	/**This method updates the time for every ovent that occurs
+	 * 
+	 */
 	public void setTimeState(double newTime){
 		this.time = newTime;
 		super.setTimeState(newTime);
 		return;
 	}
 	
-	/**This method returns the ID value for each customer*/
+	/**This method returns the ID value for each customer
+	 * 
+	 * @return
+	 */
 	public int nextCustomerId() {
 		customerIDCount++;
 		return customerIDCount;
 	}
 	//Isopen stuff
-	/**This method returns a boolean variable for if the supermarket is open or not*/
+	/**This method returns a boolean variable for if the supermarket is open or not
+	 * 
+	 * @return
+	 */
 	public boolean getisOpen(){
 		return isOpen;
 	}
-	/**This method changes the isOpen variable from true to false*/
+	/**This method changes the isOpen variable from true to false
+	 * 
+	 * @param changeOpenorClose
+	 */
 	public void changeOpenState(boolean changeOpenorClose){
 		isOpen=changeOpenorClose;
 		
 	}
 	//Missed customer stuff
-	/**This method returns the amount of missed customers*/
+	/**This method returns the amount of missed customers
+	 * 
+	 * @return
+	 */
 	public int getMissedCustomer(){
 		return missedCustomer;
 	}
-	/**This method adds a customer to the amount of missed customers*/
+	/**This method adds a customer to the amount of missed customers
+	 * 
+	 */
 	public void addMissedCustomer(){
 		missedCustomer++;
 		return;
 	}
 	//Debited customer stuff
-	/**This method returns the amount of debited customers*/
+	/**This method returns the amount of debited customers
+	 * 
+	 * @return
+	 */
 	public int getDebitedCustomer(){
 		return debitedCustomer;
 	}
-	/**This method adds a customer to the amount of debited customers*/
+	/**This method adds a customer to the amount of debited customers 
+	 */
 	public void addDebitedCustomer(){
 		debitedCustomer++;
 		return;
 	}
 	//Queued customer stuff
-	/**This method returns the amount of customers that are currently in the cash register queue*/
+	/**This method returns the amount of customers that are currently in the cash register queue
+	 * 
+	 * @return
+	 */
 	public int getQueuedCustomer() {
 		return queuedCustomer;
 	}
-	/**This method adds a customer to the amount of customer that are currently in the cash register queue*/
+	/**This method adds a customer to the amount of customer that are currently in the cash register queue
+	 * 
+	 */
 	public void addQueuedCustomer() {
 		queuedCustomer++;
 		return;
 	}
 	//Current customer amount stuff
-	/**This method returns the current amount of customers that are in the supermarket*/
+	/**This method returns the current amount of customers that are in the supermarket
+	 * 
+	 * @return
+	 */
 	public int getcurrentCustomerAmount(){
 		return currentCustomerAmount;	
 	}
-	/**This method adds a customer to the current amount of customers that are in the supermarket*/
+	/**This method adds a customer to the current amount of customers that are in the supermarket
+	 * 
+	 */
 	public void addCurrentCustomerAmount(){
 		currentCustomerAmount++;
 		return;	
 	}
-	/**This method removes a customer from the current amount of customers that are in the supermarket*/
+	/**This method removes a customer from the current amount of customers that are in the supermarket
+	 * 
+	 */
 	public void subCurrentCustomerAmount(){
 		currentCustomerAmount--;
 		return;	
 	}
 	//Observer stuff
-	/**This method notifies the observers that a change has occurred*/
+	/**This method notifies the observers that a change has occurred
+	 * 
+	 */
 	public void notifyStateObs(){
 		setChanged();
 		notifyObservers();
 	}
 	//Time statistic stuff
-	/**This method updates the time for the waited time variable and the time a cash register has been free (no customer queue)*/
+	/**This method updates the time for the waited time variable and the time a cash register has been free (no customer queue)
+	 * 
+	 * @param newTime
+	 */
 	public void updateTimeStatistics(double newTime) {
 		waitedTime = waitedTime + (newTime-time)*customerAmountInQueue();
 		if(isOpen){
@@ -203,7 +269,9 @@ public class SuperMarket extends State {
 		}
 	}
 	//Cash register stuff
-	/**This method checks if any cash registers are free*/
+	/**This method checks if any cash registers are free
+	 * 
+	 */
 	public void freeCashRegister() {
 		for (int i = 0; i < cashRegister.length; i++) {
 			if (cashRegister[i] == 1) {
@@ -213,7 +281,10 @@ public class SuperMarket extends State {
 		}
 		return;
 	}
-	/**This method returns true or false depending on if a customer is in the cash register queue or not*/
+	/**This method returns true or false depending on if a customer is in the cash register queue or not
+	 * 
+	 * @return
+	 */
 	public boolean cashRegStatus(){
 		for (int i = 0; i < cashRegister.length; i++) {
 			if (cashRegister[i] == 0) {
@@ -222,7 +293,9 @@ public class SuperMarket extends State {
 		}
 		return false;
 	}
-	/**This method makes a customer take a free cash register*/
+	/**This method makes a customer take a free cash register
+	 * 
+	 */
 	public void takeCashRegister() {
 		for (int i = 0; i < cashRegister.length; i++) {
 			if (cashRegister[i] == 0) {
@@ -232,7 +305,10 @@ public class SuperMarket extends State {
 		}
 		return;
 	}
-	/**This method returns the amount of free cash register*/
+	/**This method returns the amount of free cash register
+	 * 
+	 * @return
+	 */
 	public int amountOfFreeCashRegs() {
 		int regCount = 0;
 		for (int i = 0; i < cashRegister.length; i++) {
@@ -246,11 +322,17 @@ public class SuperMarket extends State {
 	/*
 	 * Event tracking stuff
 	 */
-	/**This method sets the current event to a new event of the type Customer*/
+	/**This method sets the current event to a new event of the type Customer
+	 * 
+	 * @param newEventCustomer
+	 */
 	public void setEventCustomer(Customer newEventCustomer) {
 		currentEventCustomer = newEventCustomer;
 	}
-	/**This method returns the event ID for a customer*/
+	/**This method returns the event ID for a customer
+	 * 
+	 * @return
+	 */
 	public int getEventCustomerId() {
 		if (currentEventCustomer == null) {
 			return 0;
@@ -263,55 +345,102 @@ public class SuperMarket extends State {
 	/*
 	 * RandomGen stuff
 	 */
-	/**This constructor returns a variable that randomizes each variable for every individual run of the program*/
+	/**This constructor returns a variable that randomizes each variable for every individual run of the program
+	 * 
+	 * @return
+	 */
 	public SuperMarketRandomGen getRnG() {
 		return rng;
 	}
-	/**This method returns the skill for each cash register operator*/
+	/**This method returns the skill for each cash register operator
+	 * 
+	 * @return
+	 */
 	public double getSkill(){
 		return skill;
 	}
-	/**This method returns the amount of cash registers*/
+	/**This method returns the amount of cash registers
+	 * 
+	 * @return
+	 */
 	public int[] getcashRegister(){
 		return cashRegister;
 	}
-	/**This method returns the max amount of customers allowed in the supermarket*/
+	/**This method returns the max amount of customers allowed in the supermarket
+	 * 
+	 * @return
+	 */
 	public int getmaxCustomerAmount(){
 		return maxCustomerAmount;
 	}
-	/**This method returns the amount of time a customer has waited in line to a cash register*/
+	/**This method returns the amount of time a customer has waited in line to a cash register
+	 * 
+	 * @return
+	 */
 	public double getwaitedTime(){
 		return waitedTime;
 	}
-	/**This method returns the customer ID count*/
+	/**This method returns the customer ID count
+	 * 
+	 * @return
+	 */
 	public int getcustomerIDCount(){
 		return customerIDCount;
 	}
-	/**This method returns the time that the supermarket has been open*/
+	/**This method returns the time that the supermarket has been open
+	 * 
+	 * @return
+	 */
 	public double getTimeOpen(){
 		return timeOpen;
 	}
-	/**This method returns the amount of time that a cash register has been free (no customers in queue)*/
+	/**This method returns the amount of time that a cash register has been free (no customers in queue)
+	 * 
+	 * @return
+	 */
 	public double getFreeCashRegTime(){
 		return this.freeCashRegTime;
 		
 	}
-
+/**
+ * Returns lambda
+ * @return
+ */
 	public double getLamda() {
 		return rng.lambda;
 	}
+	/**
+	 * returns upperdebiting limit
+	 * @return
+	 */
 	public double getPlockTidUpper() {
 		return rng.uniUpperDebiting;	
 	}
+	/**
+	 * returns lower debiting limit
+	 * @return
+	 */
 	public double getPlockTidLower() {
 		return rng.uniLowerDebiting;
 	}
+	/**
+	 * returns upper detarture limit
+	 * @return
+	 */
 	public double getPayTimeUpper() {
 		return rng.uniUpperDeparture;
 	}
+	/**
+	 * returns lower departure limit
+	 * @return
+	 */
 	public double getPayTimeLower() {
 		return rng.uniLowerDeparture;
 	}
+	/**
+	 * returns seed
+	 * @return
+	 */
 	public long getSeed() {
 		return rng.seed;
 	}
