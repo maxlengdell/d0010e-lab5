@@ -16,7 +16,7 @@ public class State extends Observable{
 	private Class<?> currentEventType; //Object that stores the current type of event.
 	private EventQueue eventQueue; //Object that stores the event queue.
 /**
- * Creates a state object with the following parameters
+ * Constructor that creates a State object with the following parameters
  * @param time
  * @param isActive
  * @param eventQueue

@@ -9,10 +9,9 @@ import simulator.Event;
 public class EventStop extends Event {
 	SuperMarket s;
 	double time;
-/** The constructor for the class EventStop, References are made to time of event and the state of the supermarket simulation
- * when a EventStop object is created*/
 /**
- * 
+ * Constructor for the class EventStop that creates a EventStop object
+ * with the following parameters
  * @param time
  * @param s
  */

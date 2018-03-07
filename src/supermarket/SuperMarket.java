@@ -1,11 +1,10 @@
 package supermarket;
+import simulator.*;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
-import simulator.*;
-
 /**The supermarket class*/
 public class SuperMarket extends State {
 	
@@ -28,7 +27,7 @@ public class SuperMarket extends State {
 	private int missedCustomer = 0;
 	private int debitedCustomer = 0;
 	private int queuedCustomer = 0;
-	private double waitedTime = 0;
+	private double waitedTime = 0; 
 	private double freeCashRegTime = 0;
 	
 	// Current State data
@@ -47,17 +46,17 @@ public class SuperMarket extends State {
 	 * Constructor
 	 */
 	@SuppressWarnings("deprecation")
-/**The constructor for the class SuperMarket. References to time of event. if the store is active or not and the queue that queues the events are made
-	
-	 * 
-	 * @param time
-	 * @param isActive
-	 * @param eventQueue
-	 * @param skill
-	 * @param max
-	 * @param cash
-	 * @param timeopen
-	 */
+/**
+ * Constructor for the class SuperMarket. Creates a SuperMarket object
+ * with the following parameters.
+ * @param time
+ * @param isActive
+ * @param eventQueue
+ * @param skill
+ * @param max
+ * @param cash
+ * @param timeopen
+ */
 	public SuperMarket(double time, boolean isActive, EventQueue eventQueue, double skill, int max, int cash, double timeopen){
 		super(time, isActive, eventQueue);
 		this.time = time;
