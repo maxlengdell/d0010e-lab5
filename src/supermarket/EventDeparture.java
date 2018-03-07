@@ -28,7 +28,7 @@ public class EventDeparture extends Event {
 		s.addDebitedCustomer();
 		Customer nextCustomer = s.takeFirstCustomerFromQueue();
 		if (nextCustomer != null) {
-			double debitingTime = time + s.getRnG().getRnGUniform();
+			double debitingTime = time + s.getRnG().getRnGUniformDeparture();
 			s.getEventQueue().addEvent(new EventDeparture(debitingTime, s, nextCustomer));			
 		}
 		else {

@@ -38,7 +38,7 @@ public class SuperMarket extends State {
 	private int customerIDCount = 0;
 	
 	// Resources This needs to be a method
-	private SuperMarketRandomGen rng = new SuperMarketRandomGen(42, 6, 0.05, 0.4);
+	private SuperMarketRandomGen rng;
 	
 	// Event tracking
 	private Customer currentEventCustomer;
@@ -68,9 +68,9 @@ public class SuperMarket extends State {
 	 * @param uUp
 	 * @return
 	 */
-	public double randgen(int seed, int lambda, double uLow, double uUp){
-		SuperMarketRandomGen rng = new SuperMarketRandomGen(seed,lambda,uLow,uUp);
-		return rng.getRnGExponential();
+	public void initRandGen(int seed, double lambda, double uLowDebiting, double uUpDebiting, double uLowDeparture, double uUpDeparture){
+		rng = new SuperMarketRandomGen(seed,lambda,uLowDebiting,uUpDebiting,uLowDeparture,uUpDeparture);
+		return;
 
 	}
 	public int numofcashregs(){
@@ -301,16 +301,16 @@ public class SuperMarket extends State {
 		return rng.lambda;
 	}
 	public double getPlockTidUpper() {
-		return rng.uniUpper*2;	
+		return rng.uniUpperDebiting;	
 	}
 	public double getPlockTidLower() {
-		return rng.uniLower*2;
+		return rng.uniLowerDebiting;
 	}
 	public double getPayTimeUpper() {
-		return rng.uniUpper;
+		return rng.uniUpperDeparture;
 	}
 	public double getPayTimeLower() {
-		return rng.uniLower;
+		return rng.uniLowerDeparture;
 	}
 	public long getSeed() {
 		return rng.seed;

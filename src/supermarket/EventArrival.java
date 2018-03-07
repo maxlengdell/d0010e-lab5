@@ -28,7 +28,7 @@ public class EventArrival extends Event {
 			if (s.getcurrentCustomerAmount()<s.getmaxCustomerAmount()) {
 				s.addCurrentCustomerAmount();
 				
-				double debitingTime = this.time + s.getRnG().getRnGUniform()*2;
+				double debitingTime = this.time + s.getRnG().getRnGUniformDebiting();
 				s.getEventQueue().addEvent(new EventDebiting(debitingTime, s, customer));
 			}
 			else {

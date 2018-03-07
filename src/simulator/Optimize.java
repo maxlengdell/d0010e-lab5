@@ -27,8 +27,10 @@ public class Optimize {
     //randomgen variables
     private static int SEED;
     private static int lambda;
-    private static double uLow;
-    private static double uUp;
+    private static double uLowDebiting;
+    private static double uUpDebiting;
+    private static double uLowDeparture;
+    private static double uUpDeparture;
     private static int min=9999;
     private static int simulations=10;
     private static SuperMarket minobj;
@@ -45,13 +47,15 @@ public class Optimize {
 		for (int i = 0; i < simulations; i++) {
 		    //dont need ++ can use + 0.5 or whatever is appropriate.
 		    //max++;
-		    time = 8;
+		    time = 10;
             //randgen variables
-            SEED = 5;
+            SEED = 1234;
             //only seed change other stay the same
-            lambda=6;
-            uLow=0.05;
-            uUp=0.4;
+            lambda=1;
+            uLowDebiting=0.5;
+            uUpDebiting=1;
+            uLowDeparture=2.0;
+            uUpDeparture=3.0;
             //add cashiers to max
 
             if(cash<max-1){
@@ -64,12 +68,13 @@ public class Optimize {
             EventQueue eq = new EventQueue();
 
             SuperMarket sm = new SuperMarket(0,true,eq, 0.5,max,cash,time);
+            sm.initRandGen(SEED,lambda,uLowDebiting,uUpDebiting,uLowDeparture,uUpDeparture);
             //SuperMarketView smView = new SuperMarketView(sm);
 
             eq.addEvent(new EventOpen(sm, 0));
             //double time = sm.getRnG().getRnGExponential(); Changed to method in sm and we can change vals from here
             //give wanted values for simulation
-            sm.randgen(SEED,lambda,uLow,uUp);
+            sm.initRandGen(SEED,lambda,uLowDebiting,uUpDebiting,uLowDeparture,uUpDeparture);
             eq.addEvent(new EventArrival(0, sm));
             eq.addEvent(new EventClose(8, sm));
             eq.addEvent(new EventStop(999,sm));
