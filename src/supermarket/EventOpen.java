@@ -12,10 +12,9 @@ public class EventOpen extends Event {
 	double time;
 	SuperMarket s;
 	
-/**The constructor for the class EventOpen. References are made to time of event and the state of the supermarket simulation when a
- * EventOpen object is created*/
 /**
- * 
+ * Constructor for the class EventOpen with the following
+ * parameters.
  * @param s
  * @param time
  */

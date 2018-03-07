@@ -1,14 +1,23 @@
 package supermarket;
-/**@author Shahin, Max, Johan, Linus*/
 import simulator.*;
-
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
+/**Class that describes the arrival event (customer arrives in supermarket)*/
 public class EventArrival extends Event {
 
 	private SuperMarket s;
 	private Customer customer;
 	private double time;
 
-	
+/**
+ * Constructor for the class EventArrival with the following
+ * parameters.	
+ * @param time
+ * @param superMarket
+ */
 	public EventArrival(double time, SuperMarket superMarket) {
 		super(time, superMarket);
 		this.s = superMarket;
@@ -44,41 +53,6 @@ public class EventArrival extends Event {
 		s.setEventType(this.getClass());
 		s.setEventCustomer(customer);
 		
-		s.notifyStateObs();
-		
+		s.notifyStateObs();		
 	}
-
-/*
-	public void Arrives() {
-		 
-		//Initierar (check)
-		//Skapar id för kunden. (check)
-		//customer creates new object  to customer. (check)
-		//Puts the customer in the "shopping" list
-		if (s.getisOpen()) {
-			int id = 0;
-			Customer customer = new Customer(id, time);
-			id++;
-		} else if (!(supermarket.getisOpen())) {
-			//Missad kund! add counter??
-		}
-
-	}
-*/
-
 }
-
-/*
-public void custArrives() {
-//Initierar (check)
-//Skapar id för kunden. (check)
-//customer creates new object  to customer. (check)
-//Puts the customer in the "shopping" list
-if (supermarket.getisOpen()) {
-	int id = 0;
-	Customer customer = new Customer(id, time);
-	id++;
-} else if (!(supermarket.getisOpen())) {
-	//Missad kund! add counter??
-}
-*/

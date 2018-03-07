@@ -1,20 +1,15 @@
 package supermarket;
-
 import java.util.Observable;
-
-/**
-*
-* @author Shahin, Max, Johan, Linus
-*
-*/
-
-
 import simulator.*;
 /**
 *
 * @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
+
+/**Class that describes what will be visible in the print
+ * of the supermarket simulation
+ */
 public class SuperMarketView extends View {
 	
 	SuperMarket s;
@@ -28,6 +23,11 @@ public class SuperMarketView extends View {
 	String error = new String("Unknown      ");
 	String stop = new String("Stop");
 	@SuppressWarnings("deprecation")
+	/**
+	 * Constructor for the class SuperMarketView with the
+	 * following variables (creates a SuperMarket object s and adds an observer).
+	 * @param s
+	 */
 	public SuperMarketView(SuperMarket s) {
 		this.s = s;
 		s.addObserver(this);
@@ -59,7 +59,10 @@ public class SuperMarketView extends View {
 		System.out.println("Time\tEvent\t\tId\tOpen?\tFree\tFreeT\tI\t$\tMissed\tTotQ\tQueueT\tCurQ\tIdQueue");
 	}
 
-	
+	/**
+	 * Updates the different variables of SuperMarketView for 
+	 * every time a new event occurs.
+	 */
 	public void update(Observable arg0, Object arg1) {
 		double time = s.getTimeState();
 		int customerId = s.getEventCustomerId();

@@ -7,10 +7,8 @@ public class EventDeparture extends Event {
 	double time;
 	SuperMarket s;
 	Customer customer;
-/**The constructor for the class EventDeparture. References are made to the time of the event, the state of the supermarket simulation and the customer
- * when a EventDeparture object is created */
-/**
- * 
+/**Constructor for the class EventDeparture
+ * with the following parameters.
  * @param time
  * @param superMarket
  * @param customer

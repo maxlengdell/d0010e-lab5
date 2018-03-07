@@ -1,12 +1,11 @@
 package simulator;
+import supermarket.*;
 /**
 *
-* @author Shahin, Max, Johan, Linus
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
 *
 */
-import supermarket.*;
-
-
+/**The main class that runs the simulation*/
 public class RunSim {
     
 //    So basically we get a generated time from the randomgen. This value is going to be passed to the respective event.
@@ -29,7 +28,10 @@ public class RunSim {
             }
         }
     }
-
+/**
+ * Main method
+ * @param args
+ */
     public static void main(String[] args) {
         //Start simulation by calling for the arrival event -> will put in Eque and all will start
         //Create all objects for the constructors give supermarket EQ and give supermarket to EA

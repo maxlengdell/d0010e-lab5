@@ -11,12 +11,12 @@ import simulator.Event;
 public class EventClose extends Event {
 	SuperMarket s;
 	double time;
-	/** Constructor for the class EventClose. When a EventClose object is created it is assigned a time when it occurs and a state*/ 
-	/**
-	 * 
-	 * @param time
-	 * @param s
-	 */
+/**
+ * Constructor for the class EventClose with the following
+ * parameters. 
+ * @param time
+ * @param s
+ */
 	public EventClose(double time, SuperMarket s){
 		super(time, s);
 		this.s=s;

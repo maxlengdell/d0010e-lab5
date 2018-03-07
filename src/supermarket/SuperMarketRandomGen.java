@@ -1,6 +1,11 @@
 package supermarket;
 
 import random.*;
+/**
+*
+* @author Shahin Salehi, Max Lengdell , Johan Jirlén, Linus Lindahl Marjavaara
+*
+*/
 /**This class creates a random run every time the program is runned*/
 public class SuperMarketRandomGen {
 	
